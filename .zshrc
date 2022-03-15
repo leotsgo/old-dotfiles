@@ -15,10 +15,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 DISABLE_MAGIC_FUNCTIONS="true"
 
 # Auto correction
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # oh-my-zsh plugins
-plugins=(git zsh-syntax-highlighting vscode gitfast zsh-autosuggestions) 
+plugins=(git zsh-syntax-highlighting gitfast zsh-autosuggestions vi-mode) 
 
 # source oh-my-zsh
 source $ZSH/oh-my-zsh.sh
