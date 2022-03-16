@@ -41,3 +41,4 @@ if [ -f '/home/leonardo.diniz/google-cloud-sdk/path.zsh.inc' ]; then . '/home/le
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/leonardo.diniz/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/leonardo.diniz/google-cloud-sdk/completion.zsh.inc'; fi
 
+source <(kubectl completion zsh)
