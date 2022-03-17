@@ -46,3 +46,6 @@ source <(kubectl completion zsh)
 # alias for p10k update with oh-my-zsh
 alias p10k-update='git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull'
 
+# KREW
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
