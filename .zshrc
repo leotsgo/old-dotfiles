@@ -42,3 +42,7 @@ if [ -f '/home/leonardo.diniz/google-cloud-sdk/path.zsh.inc' ]; then . '/home/le
 if [ -f '/home/leonardo.diniz/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/leonardo.diniz/google-cloud-sdk/completion.zsh.inc'; fi
 
 source <(kubectl completion zsh)
+
+# alias for p10k update with oh-my-zsh
+alias p10k-update='git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull'
+
