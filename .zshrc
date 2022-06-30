@@ -53,3 +53,10 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 # opam configuration
 [[ ! -r /home/leonardo.diniz/.opam/opam-init/init.zsh ]] || source /home/leonardo.diniz/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+
+# useful aliases
+alias vim="nvim"
+
+# exports
+export SUDO_EDITOR=$(asdf which nvim)
+
