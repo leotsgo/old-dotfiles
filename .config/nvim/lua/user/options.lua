@@ -26,6 +26,7 @@ local options = {
     tabstop = 2,                            -- insert 2 spaces for a tab
     cursorline = true,                      -- highlight the current line
     number = true,                          -- set numbered lines
+    relativenumber = true,
     laststatus = 3,
     showcmd = false,
     ruler = false,
