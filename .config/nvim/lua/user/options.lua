@@ -42,7 +42,8 @@ vim.opt.shortmess:append "c"
 vim.opt.fillchars.eob=" "
 vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.iskeyword:append("-")
-
+vim.g.leetcode_solution_filetype = "golang"
+vim.g.leetcode_browser = "firefox"
 
 for key, value in pairs(options) do
   vim.opt[key] = value
