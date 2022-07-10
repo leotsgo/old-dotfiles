@@ -65,8 +65,8 @@ modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
-    awful.layout.suit.floating,
     awful.layout.suit.tile,
+    awful.layout.suit.floating,
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
@@ -292,6 +292,8 @@ globalkeys = gears.table.join(
         {description = "go back", group = "client"}),
 
     -- Standard program
+    awful.key({ modkey,           }, "c", function () awful.spawn.with_shell("flameshot gui") end,
+              {description = "printscreen", group = "launcher"}),
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
@@ -586,3 +588,5 @@ local xrandr = require("xrandr")
 awful.spawn.with_shell("~/.config/awesome/setup_compton.sh")
 awful.spawn.with_shell("~/.config/awesome/setup_monitors.sh")
 awful.spawn.with_shell("~/.config/awesome/setup_nitrogen.sh")
+awful.spawn.with_shell("flameshot")
+awful.spawn.with_shell("bleman-applet")
