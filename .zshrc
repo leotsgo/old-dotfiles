@@ -20,6 +20,7 @@ source /home/leonardo.diniz/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Source zsh-vi-mode
+ZVM_VI_ESCAPE_BINDKEY=jj
 source $HOME/.zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # Source aliases
@@ -64,3 +65,4 @@ alias p10k-update='git -C ~/.zsh/powerlevel10k pull'
 
 # exports
 export SUDO_EDITOR=$(asdf which nvim)
+
