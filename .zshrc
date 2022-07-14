@@ -20,6 +20,9 @@ source /home/leonardo.diniz/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Source zsh-vi-mode
+ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
+ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
+ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_UNDERLINE
 ZVM_VI_ESCAPE_BINDKEY=jj
 source $HOME/.zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
