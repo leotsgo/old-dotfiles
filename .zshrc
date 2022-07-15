@@ -14,7 +14,7 @@ HISTFILE=~/.config/.zsh/.zsh_history
 source ~/.config/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 
 # Source zsh-syntax-highlighting
-source /home/leonardo.diniz/.config/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.config/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Source zsh-history-substring-search
 source ~/.config/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
@@ -52,10 +52,10 @@ zstyle ':completion:*' menu select
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/leonardo.diniz/google-cloud-sdk/path.zsh.inc' ]; then . '/home/leonardo.diniz/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f ~/google-cloud-sdk/path.zsh.inc ]; then . ~/google-cloud-sdk/path.zsh.inc; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/leonardo.diniz/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/leonardo.diniz/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f ~/google-cloud-sdk/completion.zsh.inc ]; then . ~/google-cloud-sdk/completion.zsh.inc; fi
 
 # The next line enables shell command completion for kubectl
 source <(kubectl completion zsh)
