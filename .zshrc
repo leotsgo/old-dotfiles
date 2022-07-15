@@ -8,16 +8,16 @@ fi
 # ZSH HISTORY
 HISTSIZE=100000000
 SAVEHIST=100000000
-HISTFILE=~/.zsh/.zsh_history
+HISTFILE=~/.config/.zsh/.zsh_history
 
 # Source p10k
-source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.config/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 
 # Source zsh-syntax-highlighting
-source /home/leonardo.diniz/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/leonardo.diniz/.config/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Source zsh-history-substring-search
-source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ~/.config/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=(bg=green,bold)
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND=(bg=red,bold)
 HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true
@@ -26,17 +26,17 @@ bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
 
 # Source zsh-autosuggestions
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.config/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Source zsh-vi-mode
 ZVM_VI_ESCAPE_BINDKEY=jj
-source $HOME/.zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+source $HOME/.config/.zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
 ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_UNDERLINE
 
 # Source aliases
-source $HOME/.zsh/aliases.zsh
+source $HOME/.config/.zsh/aliases.zsh
 
 # SOURCE asdf
 . $HOME/.asdf/asdf.sh
