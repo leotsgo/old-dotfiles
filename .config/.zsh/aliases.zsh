@@ -44,3 +44,11 @@ alias kitty.conf='vim ~/.config/kitty/kitty.conf'
 alias zshrc='vim ~/.zshrc'
 alias asdfrc='vim ~/.asdfrc'
 alias awesomerc='vim ~/.config/awesome/rc.lua'
+alias aliases='vim ~/.config/.zsh/aliases.zsh'
+
+# useful aliases
+alias vim="nvim"
+alias update-nvim-stable='asdf uninstall neovim stable && asdf install neovim stable'
+alias update-nvim-nightly='asdf uninstall neovim nightly && asdf install neovim nightly'
+alias update-nvim-master='asdf uninstall neovim ref:master && asdf install neovim ref:master'
+alias p10k-update='git -C ~/.zsh/powerlevel10k pull'
