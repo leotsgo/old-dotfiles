@@ -6,15 +6,24 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # ZSH HISTORY
-HISTFILE=~/.zsh/.zsh_history
 HISTSIZE=100000000
 SAVEHIST=100000000
+HISTFILE=~/.zsh/.zsh_history
 
 # Source p10k
 source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 
 # Source zsh-syntax-highlighting
 source /home/leonardo.diniz/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Source zsh-history-substring-search
+source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=(bg=green,bold)
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND=(bg=red,bold)
+HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true
+bindkey -v
+bindkey "^[[A" history-substring-search-up
+bindkey "^[[B" history-substring-search-down
 
 # Source zsh-autosuggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
