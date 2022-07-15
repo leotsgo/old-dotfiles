@@ -39,7 +39,7 @@ alias la='ls -lAh --color=auto'
 alias ls='ls --color=auto'
 alias l.='ls -d .* --color=auto'
 
-# Quick alias to edit config files
+# Quick aliases to edit config files
 alias kitty.conf='vim ~/.config/kitty/kitty.conf'
 alias zshrc='vim ~/.zshrc'
 alias asdfrc='vim ~/.asdfrc'
