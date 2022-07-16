@@ -52,3 +52,4 @@ alias update-nvim-stable='asdf uninstall neovim stable && asdf install neovim st
 alias update-nvim-nightly='asdf uninstall neovim nightly && asdf install neovim nightly'
 alias update-nvim-master='asdf uninstall neovim ref:master && asdf install neovim ref:master'
 alias p10k-update='git -C ~/.config/.zsh/powerlevel10k pull'
+alias resource='echo Reshiming and resourcing... && asdf reshim && source ~/.zshrc && echo Done!'

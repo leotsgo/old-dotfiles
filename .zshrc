@@ -38,8 +38,10 @@ ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_UNDERLINE
 # Source aliases
 source $HOME/.config/.zsh/aliases.zsh
 
-# SOURCE asdf
+# Source asdf
 . $HOME/.asdf/asdf.sh
+PATH=$PATH:$(asdf where python)/bin # adds python to PATH
+PATH=$PATH:$(asdf where nodejs)/bin # adds node to PATH
 
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
