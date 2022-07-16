@@ -56,6 +56,7 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init("~/.config/awesome/themes/default_theme.lua")
+beautiful.useless_gap = 3
 
 -- This is used later as the default terminal and editor to run.
 terminal = "x-terminal-emulator"
