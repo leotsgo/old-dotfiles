@@ -11,6 +11,7 @@ SAVEHIST=100000000
 HISTFILE=~/.config/.zsh/.zsh_history
 
 # Source p10k
+ZLE_RPROMPT_INDENT=0
 source ~/.config/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 
 # Source zsh-syntax-highlighting
