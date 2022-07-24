@@ -43,6 +43,7 @@ source $HOME/.config/.zsh/aliases.zsh
 . $HOME/.asdf/asdf.sh
 PATH=$PATH:$(asdf where python)/bin # adds python to PATH
 PATH=$PATH:$(asdf where nodejs)/bin # adds node to PATH
+PATH=$PATH:$(asdf where golang)/go/bin # adds go to PATH
 
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
@@ -72,4 +73,4 @@ source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
 
 # exports
 export SUDO_EDITOR=$(asdf which nvim)
-
+export GOPATH="$HOME/go"
