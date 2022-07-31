@@ -38,6 +38,9 @@ keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 -- Close buffers
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 
+-- Format text
+keymap("n", "<leader>f", ":Format<CR>", opts)
+
 -- Better paste
 keymap("v", "p", '"_dP', opts)
 
