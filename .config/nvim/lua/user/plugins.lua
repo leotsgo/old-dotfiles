@@ -45,7 +45,7 @@ return packer.startup(function(use)
   use({ "nvim-lua/plenary.nvim" }) -- Useful lua functions used by lots of plugins
   use({ "windwp/nvim-autopairs" }) -- Autopairs, integrates with both cmp and treesitter
   use({ "numToStr/Comment.nvim" })
-  use("JoosepAlviste/nvim-ts-context-commentstring")
+  use({ "JoosepAlviste/nvim-ts-context-commentstring" })
   use({ "kyazdani42/nvim-web-devicons" })
   use({ "kyazdani42/nvim-tree.lua" })
   use({ "akinsho/bufferline.nvim" })
@@ -55,16 +55,16 @@ return packer.startup(function(use)
   use({ "lewis6991/impatient.nvim" })
   use({ "lukas-reineke/indent-blankline.nvim" })
   use({ "goolord/alpha-nvim" })
-  use("wellle/targets.vim")
-  use("fatih/vim-go")
-  use("github/copilot.vim")
-  use("andweeb/presence.nvim")
-  use("ianding1/leetcode.vim")
-  use("kylechui/nvim-surround")
+  use({ "wellle/targets.vim" })
+  use({ "fatih/vim-go" })
+  use({ "github/copilot.vim" })
+  use({ "andweeb/presence.nvim" })
+  use({ "ianding1/leetcode.vim" })
+  use({ "kylechui/nvim-surround" })
 
   -- Colorschemes
-  use("gruvbox-community/gruvbox")
-  use("xiyaowong/nvim-transparent")
+  use({ "gruvbox-community/gruvbox" })
+  use({ "xiyaowong/nvim-transparent" })
 
   -- cmp plugins
   use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
