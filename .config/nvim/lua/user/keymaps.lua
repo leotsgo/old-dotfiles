@@ -46,6 +46,9 @@ keymap("n", "<C-s>", ":update<CR>")
 keymap("v", "<C-s>", "<C-C>:update<CR>")
 keymap("i", "<C-s>", "<C-O>:update<CR>")
 
+-- Copies buffer full path to clipboard
+keymap("n", "<C-f>", ":let @+ = expand('%:p')<CR>")
+
 -- Better paste
 keymap("v", "p", '"_dP', opts)
 
