@@ -60,6 +60,7 @@ return packer.startup(function(use)
   use("github/copilot.vim")
   use("andweeb/presence.nvim")
   use("ianding1/leetcode.vim")
+  use("kylechui/nvim-surround")
 
   -- Colorschemes
   use("gruvbox-community/gruvbox")
