@@ -41,6 +41,11 @@ keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 -- Format text
 keymap("n", "<leader>f", ":Format<CR>", opts)
 
+-- Save with CTRL + S
+keymap("n", "<C-s>", ":update<CR>")
+keymap("v", "<C-s>", "<C-C>:update<CR>")
+keymap("i", "<C-s>", "<C-O>:update<CR>")
+
 -- Better paste
 keymap("v", "p", '"_dP', opts)
 
