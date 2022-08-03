@@ -54,3 +54,10 @@ alias update-nvim-master='asdf uninstall neovim ref:master && asdf install neovi
 alias p10k-update='git -C ~/.config/.zsh/powerlevel10k pull'
 alias resource='echo Reshiming and resourcing... && asdf reshim && source ~/.zshrc && echo Done!'
 alias newcolor='bash -c "$(wget -qO- https://git.io/vQgMr)" && echo "background_opacity 0.75" >> ~/.config/kitty/colors.conf'
+
+# yadm
+function yl() {
+  cd ~
+  yadm enter lazygit
+  cd ~
+}
