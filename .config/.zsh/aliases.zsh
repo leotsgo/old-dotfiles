@@ -57,7 +57,8 @@ alias newcolor='bash -c "$(wget -qO- https://git.io/vQgMr)" && echo "background_
 
 # yadm
 function yl() {
+  local dir="$(pwd)"
   cd ~
   yadm enter lazygit
-  cd ~
+  cd $dir
 }
