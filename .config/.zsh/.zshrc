@@ -79,4 +79,4 @@ source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
 # exports
 export SUDO_EDITOR=$(asdf which nvim)
 export GOPATH="$HOME/go"
-export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
+export ZSH_COMPDUMP=~/.cache/.zcompdump-$HOST
