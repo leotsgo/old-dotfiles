@@ -29,8 +29,8 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Keep lines in the middle of the screen
-keymap("n", "j", "jzz")
-keymap("n", "k", "kzz")
+keymap("n", "j", "jzz", opts)
+keymap("n", "k", "kzz", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
@@ -46,15 +46,15 @@ keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 keymap("n", "<leader>f", ":Format<CR>", opts)
 
 -- Save with CTRL + S
-keymap("n", "<C-s>", ":update<CR>")
-keymap("v", "<C-s>", "<C-C>:update<CR>")
-keymap("i", "<C-s>", "<C-O>:update<CR>")
+keymap("n", "<C-s>", ":update<CR>", opts)
+keymap("v", "<C-s>", "<C-C>:update<CR>", opts)
+keymap("i", "<C-s>", "<C-O>:update<CR>", opts)
 
 -- Copies buffer full path to clipboard
-keymap("n", "<C-f>", ":let @+ = expand('%:p')<CR>")
+keymap("n", "<C-f>", ":let @+ = expand('%:p')<CR>", opts)
 
 -- CTRL + q to quit
-keymap("n", "<C-q>", ":q<CR>")
+keymap("n", "<C-q>", ":q<CR>", opts)
 
 -- Better paste
 keymap("v", "p", '"_dP', opts)
@@ -92,19 +92,8 @@ keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
 -- Git
--- keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
+keymap("n", "<leader>g", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
 -- Comment
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
 keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')
-
--- DAP
-keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
-keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", opts)
-keymap("n", "<leader>di", "<cmd>lua require'dap'.step_into()<cr>", opts)
-keymap("n", "<leader>do", "<cmd>lua require'dap'.step_over()<cr>", opts)
-keymap("n", "<leader>dO", "<cmd>lua require'dap'.step_out()<cr>", opts)
-keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", opts)
-keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
-keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
-keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
