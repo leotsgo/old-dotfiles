@@ -23,13 +23,7 @@ toggleterm.setup({
 local Terminal = require("toggleterm.terminal").Terminal
 local lazygit = Terminal:new({
 	cmd = "lazygit",
-	size = 40,
 	hidden = true,
-	direction = "float",
-	float_opts = {
-		border = "curved",
-		winblend = 2,
-	},
 })
 
 function _LAZYGIT_TOGGLE()
