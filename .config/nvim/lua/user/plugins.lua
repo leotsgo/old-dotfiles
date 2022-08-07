@@ -62,6 +62,8 @@ return packer.startup(function(use)
 	use({ "ianding1/leetcode.vim" })
 	use({ "kylechui/nvim-surround" })
 	use({ "akinsho/toggleterm.nvim" })
+	use({ "Pocco81/true-zen.nvim" })
+	use({ "ThePrimeagen/harpoon" })
 
 	-- Colorschemes
 	-- use({ "gruvbox-community/gruvbox" })

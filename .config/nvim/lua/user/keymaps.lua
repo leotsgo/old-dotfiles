@@ -53,6 +53,36 @@ keymap("n", "<C-f>", ":let @+ = expand('%:p')<CR>", opts)
 -- CTRL + q to quit
 keymap("n", "<C-q>", ":q<CR>", opts)
 
+-- True-Zen keymaps
+keymap("n", "<leader>zn", ":TZNarrow<CR>", opts)
+keymap("v", "<leader>zn", ":'<,'>TZNarrow<CR>", opts)
+keymap("n", "<leader>zf", ":TZFocus<CR>", opts)
+keymap("n", "<leader>zm", ":TZMinimalist<CR>", opts)
+keymap("n", "<leader>za", ":TZAtaraxis<CR>", opts)
+
+-- Harpoon
+keymap("n", "<leader>a", function()
+	require("harpoon.mark").add_file()
+end, opts)
+keymap("n", "<C-e>", function()
+	require("harpoon.ui").toggle_quick_menu()
+end, opts)
+keymap("n", "<leader>tc", function()
+	require("harpoon.cmd-ui").toggle_quick_menu()
+end, opts)
+keymap("n", "<C-1>", function()
+	require("harpoon.ui").nav_file(1)
+end, opts)
+keymap("n", "<C-2>", function()
+	require("harpoon.ui").nav_file(2)
+end, opts)
+keymap("n", "<C-3>", function()
+	require("harpoon.ui").nav_file(3)
+end, opts)
+keymap("n", "<C-4>", function()
+	require("harpoon.ui").nav_file(4)
+end, opts)
+
 -- Insert --
 -- Press jj fast to leave insert mode
 keymap("i", "jj", "<ESC>", opts)
