@@ -42,9 +42,6 @@ keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 -- Close buffers
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 
--- Format text
-keymap("n", "<leader>f", ":Format<CR>", opts)
-
 -- Save with CTRL + S
 keymap("n", "<C-s>", ":update<CR>", opts)
 keymap("v", "<C-s>", "<C-C>:update<CR>", opts)
