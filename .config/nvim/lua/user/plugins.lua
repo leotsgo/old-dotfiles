@@ -69,7 +69,7 @@ return packer.startup(function(use)
 	-- use({ "gruvbox-community/gruvbox" })
 	use({ "luisiacc/gruvbox-baby" })
 	use({ "ellisonleao/gruvbox.nvim" })
-	use({ "xiyaowong/nvim-transparent" })
+	-- use({ "xiyaowong/nvim-transparent" })
 
 	-- cmp plugins
 	use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
