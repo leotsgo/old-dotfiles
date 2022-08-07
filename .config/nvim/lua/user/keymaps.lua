@@ -8,12 +8,12 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 
 -- Modes
--- normal_mode = "n",
---   insert_mode = "i",
---   visual_mode = "v",
---   visual_block_mode = "x",
---   term_mode = "t",
---   command_mode = "c",
+--  normal_mode = "n",
+--  insert_mode = "i",
+--  visual_mode = "v",
+--  visual_block_mode = "x",
+--  term_mode = "t",
+--  command_mode = "c",
 
 -- Normal --
 -- Better window navigation
@@ -42,7 +42,7 @@ keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 -- Close buffers
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 
--- Save with CTRL + S
+-- Save with CTRL + s
 keymap("n", "<C-s>", ":update<CR>", opts)
 keymap("v", "<C-s>", "<C-C>:update<CR>", opts)
 keymap("i", "<C-s>", "<C-O>:update<CR>", opts)
@@ -52,9 +52,6 @@ keymap("n", "<C-f>", ":let @+ = expand('%:p')<CR>", opts)
 
 -- CTRL + q to quit
 keymap("n", "<C-q>", ":q<CR>", opts)
-
--- Better paste
-keymap("v", "p", '"_dP', opts)
 
 -- Insert --
 -- Press jj fast to leave insert mode
@@ -70,10 +67,11 @@ keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 keymap("v", "p", '"_dP', opts) -- Persists yanked text
 
+-- Better paste
+keymap("v", "p", '"_dP', opts)
+
 -- Visual Block --
 -- Move text up and down
--- keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
--- keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
