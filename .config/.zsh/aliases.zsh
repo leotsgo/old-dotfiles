@@ -54,6 +54,7 @@ alias update-nvim-nightly='asdf uninstall neovim nightly && asdf install neovim 
 alias update-nvim-master='asdf uninstall neovim ref:master && asdf install neovim ref:master'
 alias p10k-update='git -C ~/.config/.zsh/powerlevel10k pull'
 alias resource='echo Reshiming and resourcing... && asdf reshim && source ~/.zshrc && echo Done!'
+alias grep='grep --color=auto'
 
 # yadm
 function yl() {
