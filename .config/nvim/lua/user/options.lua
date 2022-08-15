@@ -31,7 +31,7 @@ local options = {
 	showcmd = false,
 	ruler = false,
 	numberwidth = 4, -- set number column width to 2 {default 4}
-	signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
+	signcolumn = "auto:1", -- always show the sign column, otherwise it would shift the text each time
 	wrap = false, -- display lines as one long line
 	scrolloff = 8, -- is one of my fav
 	sidescrolloff = 8,
@@ -39,7 +39,6 @@ local options = {
 }
 
 vim.opt.shortmess:append("c")
-vim.opt.fillchars.eob = " "
 vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.iskeyword:append("-")
 vim.g.leetcode_solution_filetype = "golang"
