@@ -1,3 +1,11 @@
+# Uses gpg-agent instead of ssh-agent
+unset SSH_AGENT_PID
+if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+fi
+export GPG_TTY=$(tty)
+gpg-connect-agent updatestartuptty /bye >/dev/null
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -19,9 +27,6 @@ HISTFILE=~/.config/.zsh/.zsh_history
 ZLE_RPROMPT_INDENT=0
 source ~/.config/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 
-# Source zsh-syntax-highlighting
-source ~/.config/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 # Source zsh-history-substring-search
 source ~/.config/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=(bg=green,bold)
@@ -41,14 +46,11 @@ ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
 ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_UNDERLINE
 
-# Source aliases
-source $HOME/.config/.zsh/aliases.zsh
-
 # Source asdf
 . $HOME/.asdf/asdf.sh
-PATH=$PATH:$(asdf where python)/bin # adds python to PATH
 PATH=$PATH:$(asdf where nodejs)/bin # adds node to PATH
-PATH=$PATH:$(asdf where golang)/go/bin # adds go to PATH
+# PATH=$PATH:$(asdf where python)/bin # adds python to PATH
+# PATH=$PATH:$(asdf where golang)/go/bin # adds go to PATH
 
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
@@ -57,6 +59,9 @@ fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select # Enable tab completion menu
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' '+l:|=* r:|=*' # Enable tab completion based on what's already written
+
+# Source aliases
+source $HOME/.config/.zsh/aliases.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -80,3 +85,7 @@ source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
 export SUDO_EDITOR=$(asdf which nvim)
 export GOPATH="$HOME/go"
 export ZSH_COMPDUMP=~/.cache/.zcompdump-$HOST
+
+# Source zsh-syntax-highlighting
+source ~/.config/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+

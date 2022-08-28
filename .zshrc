@@ -1,1 +1,1 @@
-/home/leonardo.diniz/.config/.zsh/.zshrc
+/home/leodiber/.config/.zsh/.zshrc
