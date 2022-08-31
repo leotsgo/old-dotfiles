@@ -100,8 +100,8 @@ layouts = [
 
 widget_defaults = dict(
     font="Comic Code Ligatures",
-    fontsize=14,
-    padding=3,
+    fontsize=15,
+    padding=5,
 )
 extension_defaults = widget_defaults.copy()
 
@@ -119,10 +119,12 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.Volume(),
+                widget.Volume(fmt="Vol: {}"),
                 widget.Systray(),
-                widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
-                widget.QuickExit(),
+                widget.Sep(linewidth=3),
+                widget.Clock(format="%a, %B %d %H:%M"),
+                widget.Sep(linewidth=3),
+                widget.QuickExit(default_text="[shutdown]"),
             ],
             24,
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
