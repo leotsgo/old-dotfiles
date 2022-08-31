@@ -3,6 +3,7 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 
 mod = "mod4"
+alt = "mod1"
 terminal = "kitty"
 
 keys = [
@@ -42,6 +43,17 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key([mod], "c", lazy.spawn("flameshot gui"), desc="Screenshot tool"),
+    Key([mod], "equal", lazy.spawn("amixer -c 1 -q set Master 1%+"), desc="Volume +"),
+    Key([mod], "minus", lazy.spawn("amixer -c 1 -q set Master 1%-"), desc="Volume -"),
+    Key(
+        [mod],
+        "p",
+        lazy.spawn(
+            "rofi -modi drun,run -show drun -font 'Comic Code Ligatures 17' -show-icons"
+        ),
+        desc="Prompts rofi",
+    ),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -107,8 +119,7 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.TextBox("default config", name="default"),
-                widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
+                widget.Volume(),
                 widget.Systray(),
                 widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
                 widget.QuickExit(),
