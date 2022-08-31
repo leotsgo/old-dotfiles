@@ -54,6 +54,14 @@ keys = [
         ),
         desc="Prompts rofi",
     ),
+    Key(
+        [mod],
+        "f",
+        lazy.spawn(
+            "rofi -show filebrowser -font 'Comic Code Ligatures 17' -show-icons"
+        ),
+        desc="rofi filebrowser",
+    ),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -107,7 +115,7 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        top=bar.Bar(
+        bottom=bar.Bar(
             [
                 widget.CurrentLayout(),
                 widget.GroupBox(),

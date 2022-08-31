@@ -6,5 +6,6 @@ kb-remove-to-eol: "Control+Shift+e";
 /*kb-mode-next: "Shift+Right,Control+Tab,Control+l";*/
 kb-mode-previous: "Shift+Left,Control+Shift+Tab,Control+h";
 kb-remove-char-back: "BackSpace";
+modes: "window,run,ssh,drun,filebrowser";
 }
 @theme "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"
