@@ -54,9 +54,13 @@ keys = [
     Key(
         [mod],
         "p",
-        lazy.spawn(
-            "rofi -modi drun,run -show drun -font 'Comic Code Ligatures 17' -show-icons"
-        ),
+        lazy.spawn("launcher_t4"),
+        desc="Prompts rofi",
+    ),
+    Key(
+        [mod],
+        "s",
+        lazy.spawn("powermenu_t2"),
         desc="Prompts rofi",
     ),
     Key(
