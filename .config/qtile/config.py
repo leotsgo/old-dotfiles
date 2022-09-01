@@ -11,36 +11,23 @@ triangle = "◀"
 slash = ""
 separator = slash
 
+# fmt: off
 keys = [
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
     Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
-    Key(
-        [mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"
-    ),
-    Key(
-        [mod, "shift"],
-        "l",
-        lazy.layout.shuffle_right(),
-        desc="Move window to the right",
-    ),
+    Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
+    Key([mod, "shift"], "l", lazy.layout.shuffle_right(), desc="Move window to the right"),
     Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
     Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
     Key([mod, "control"], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
-    Key(
-        [mod, "control"], "l", lazy.layout.grow_right(), desc="Grow window to the right"
-    ),
+    Key([mod, "control"], "l", lazy.layout.grow_right(), desc="Grow window to the right"),
     Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
-    Key(
-        [mod, "shift"],
-        "Return",
-        lazy.layout.toggle_split(),
-        desc="Toggle between split and unsplit sides of stack",
-    ),
+    Key([mod, "shift"], "Return", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "w", lazy.spawn("google-chrome-stable"), desc="Launch Chrome"),
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
@@ -51,27 +38,11 @@ keys = [
     Key([mod], "c", lazy.spawn("flameshot gui"), desc="Screenshot tool"),
     Key([mod], "equal", lazy.spawn("amixer -c 1 -q set Master 1%+"), desc="Volume +"),
     Key([mod], "minus", lazy.spawn("amixer -c 1 -q set Master 1%-"), desc="Volume -"),
-    Key(
-        [mod],
-        "p",
-        lazy.spawn("launcher_t4"),
-        desc="Prompts rofi",
-    ),
-    Key(
-        [mod],
-        "s",
-        lazy.spawn("powermenu_t2"),
-        desc="Prompts rofi",
-    ),
-    Key(
-        [mod],
-        "f",
-        lazy.spawn(
-            "rofi -show filebrowser -font 'Comic Code Ligatures 17' -show-icons"
-        ),
-        desc="rofi filebrowser",
-    ),
+    Key([mod], "p", lazy.spawn("launcher_t4"), desc="Prompts rofi"),
+    Key([mod], "s", lazy.spawn("powermenu_t2"), desc="Prompts powermenu"),
+    Key([mod], "f", lazy.spawn("rofi -show filebrowser -font 'Comic Code Ligatures 17' -show-icons"), desc="rofi filebrowser"),
 ]
+# fmt: on
 
 groups = []
 group_names = "1234567890"
@@ -87,6 +58,8 @@ for i in groups:
         ]
     )
 
+default_layout_options = []
+
 layouts = [
     layout.Columns(
         border_focus="#458588",
@@ -96,6 +69,13 @@ layouts = [
         margin_on_single=0,
     ),
     layout.Max(),
+    layout.MonadThreeCol(
+        border_focus="#458588",
+        border_normal="#665c54",
+        border_width=3,
+        margin=2,
+        margin_on_single=0,
+    ),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
@@ -141,9 +121,7 @@ screens = [
                     background=background,
                     foreground=green,
                 ),
-                widget.CapsNumLockIndicator(
-                    background=green, foreground=white0, update_interval=0.1
-                ),
+                widget.CapsNumLockIndicator(background=green, foreground=white0, update_interval=0.1),
                 widget.TextBox(
                     padding=0,
                     text=separator,
@@ -201,9 +179,7 @@ mouse = [
         lazy.window.set_position_floating(),
         start=lazy.window.get_position(),
     ),
-    Drag(
-        [mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()
-    ),
+    Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
     Click([mod], "Button2", lazy.window.bring_to_front()),
 ]
 
