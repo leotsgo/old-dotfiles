@@ -102,6 +102,9 @@ screens = [
     Screen(
         bottom=bar.Bar(
             [
+                widget.CurrentLayoutIcon(
+                    background=blue,
+                ),
                 widget.GroupBox(
                     disable_drag=True,
                     spacing=0,
