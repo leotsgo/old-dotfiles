@@ -1,10 +1,15 @@
 from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
+from gruvbox.gruvbox import *
+from theme import *
 
 mod = "mod4"
-alt = "mod1"
 terminal = "kitty"
+
+triangle = "◀"
+slash = ""
+separator = slash
 
 keys = [
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
@@ -64,23 +69,17 @@ keys = [
     ),
 ]
 
-groups = [Group(i) for i in "123456789"]
+groups = []
+group_names = "1234567890"
+group_labels = "一二三四五六七八九十"
+for i in range(len(group_names)):
+    groups.append(Group(name=group_names[i], label=group_labels[i]))
 
 for i in groups:
     keys.extend(
         [
-            Key(
-                [mod],
-                i.name,
-                lazy.group[i.name].toscreen(),
-                desc="Switch to group {}".format(i.name),
-            ),
-            Key(
-                [mod, "shift"],
-                i.name,
-                lazy.window.togroup(i.name),
-                desc="Switch to & move focused window to group {}".format(i.name),
-            ),
+            Key([mod], i.name, lazy.group[i.name].toscreen()),
+            Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
         ]
     )
 
@@ -108,8 +107,10 @@ layouts = [
 
 widget_defaults = dict(
     font="Comic Code Ligatures",
-    fontsize=15,
+    fontsize=18,
     padding=5,
+    foreground=foreground,
+    background=background,
 )
 extension_defaults = widget_defaults.copy()
 
@@ -117,26 +118,73 @@ screens = [
     Screen(
         bottom=bar.Bar(
             [
-                widget.CurrentLayout(),
-                widget.GroupBox(),
-                widget.Prompt(),
-                widget.WindowName(),
-                widget.Chord(
-                    chords_colors={
-                        "launch": ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
+                widget.GroupBox(
+                    disable_drag=True,
+                    spacing=0,
+                    center_aligned=True,
+                    active=active,
+                    inactive=inactive,
+                    highlight_method="block",
+                    this_current_screen_border=mark,
+                    urgent_border=warning,
                 ),
-                widget.Volume(fmt="Vol: {}"),
-                widget.Systray(),
-                widget.Sep(linewidth=3),
-                widget.Clock(format="%a, %B %d %H:%M"),
-                widget.Sep(linewidth=3),
-                widget.QuickExit(default_text="[shutdown]"),
+                widget.WindowName(
+                    foreground=background,
+                ),
+                widget.TextBox(
+                    padding=0,
+                    text=separator,
+                    background=background,
+                    foreground=green,
+                ),
+                widget.CapsNumLockIndicator(
+                    background=green, foreground=white0, update_interval=0.1
+                ),
+                widget.TextBox(
+                    padding=0,
+                    text=separator,
+                    foreground=yellow,
+                    background=green,
+                ),
+                widget.TextBox(
+                    text="vol:",
+                    background=yellow,
+                    foreground=white0,
+                ),
+                widget.Volume(
+                    background=yellow,
+                    foreground=white0,
+                ),
+                widget.TextBox(
+                    padding=0,
+                    text=separator,
+                    foreground=blue,
+                    background=yellow,
+                ),
+                widget.Clock(
+                    # format='%I:%M %p',
+                    format="%d.%m",
+                    background=blue,
+                    foreground=white0,
+                ),
+                widget.TextBox(
+                    padding=0,
+                    text=separator,
+                    foreground=purple,
+                    background=blue,
+                ),
+                widget.Clock(
+                    # format='%d.%m.%Y',
+                    format="%I:%M",
+                    background=purple,
+                    foreground=white0,
+                ),
+                widget.Systray(
+                    background=purple,
+                    icon_size=15,
+                ),
             ],
-            24,
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
+            20,
         ),
     ),
 ]

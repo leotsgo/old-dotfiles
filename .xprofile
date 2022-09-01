@@ -2,3 +2,5 @@ xrandr --output HDMI-0 --mode 1920x1080
 setxbmap abtn2
 nitrogen --restore
 picom -f &
+twmnd &
+flameshot &

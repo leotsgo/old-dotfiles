@@ -1,0 +1,7 @@
+# /usr/share/xsessions/qtile.desktop
+[Desktop Entry]
+Name=Qtile
+Comment=Qtile Session
+Exec=dbus-launch --sh-syntax --exit-with-session qtile start
+Type=Application
+Keywords=wm;tiling
