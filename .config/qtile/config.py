@@ -62,35 +62,18 @@ for i in groups:
         ]
     )
 
-default_layout_options = []
+layouts_defaults = dict(
+    border_focus="#458588",
+    border_normal="#665c54",
+    border_width=3,
+    margin=2,
+    margin_on_single=0,
+)
 
 layouts = [
-    layout.Columns(
-        border_focus="#458588",
-        border_normal="#665c54",
-        border_width=3,
-        margin=2,
-        margin_on_single=0,
-    ),
+    layout.Columns(**layouts_defaults),
+    layout.MonadThreeCol(**layouts_defaults),
     layout.Max(),
-    layout.MonadThreeCol(
-        border_focus="#458588",
-        border_normal="#665c54",
-        border_width=3,
-        margin=2,
-        margin_on_single=0,
-    ),
-    # Try more layouts by unleashing below layouts.
-    # layout.Stack(num_stacks=2),
-    # layout.Bsp(),
-    # layout.Matrix(),
-    # layout.MonadTall(),
-    # layout.MonadWide(),
-    # layout.RatioTile(),
-    # layout.Tile(),
-    # layout.TreeTab(),
-    # layout.VerticalTile(),
-    # layout.Zoomy(),
 ]
 
 widget_defaults = dict(
@@ -204,7 +187,7 @@ floating_layout = layout.Floating(
         Match(wm_class="maketag"),  # gitk
         Match(wm_class="ssh-askpass"),  # ssh-askpass
         Match(title="branchdialog"),  # gitk
-        Match(title="pinentry"),  # GPG key password entry
+        Match(wm_class="pinentry-gtk-2"),  # GPG key password entry
     ]
 )
 auto_fullscreen = True
