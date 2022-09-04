@@ -88,4 +88,5 @@ export ZSH_COMPDUMP=~/.cache/.zcompdump-$HOST
 
 # Source zsh-syntax-highlighting
 source ~/.config/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
+# Edit .zshrc and add this line
+export PATH=$HOME/.config/rofi/scripts:$PATH

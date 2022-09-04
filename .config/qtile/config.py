@@ -1,3 +1,7 @@
+import os
+import subprocess
+import re
+import socket
 from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
@@ -160,7 +164,7 @@ screens = [
                 ),
                 widget.Clock(
                     # format='%d.%m.%Y',
-                    format="%I:%M",
+                    format="%H:%M",
                     background=purple,
                     foreground=white0,
                 ),
