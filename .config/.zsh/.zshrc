@@ -13,7 +13,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-
 # alternative to p10k theme
 # autoload -U colors && colors
 # PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
@@ -88,5 +87,6 @@ export ZSH_COMPDUMP=~/.cache/.zcompdump-$HOST
 
 # Source zsh-syntax-highlighting
 source ~/.config/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# Edit .zshrc and add this line
+
+# Rofi custom launchers and powermenu
 export PATH=$HOME/.config/rofi/scripts:$PATH

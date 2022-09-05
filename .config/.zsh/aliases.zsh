@@ -32,12 +32,13 @@ function d () {
 compdef _dirs d
 
 # List directory contents
-alias lsa='ls -lah --color=auto'
-alias l='ls -lah --color=auto'
-alias ll='ls -lh --color=auto'
-alias la='ls -lAh --color=auto'
-alias ls='ls --color=auto'
-alias l.='ls -d .* --color=auto'
+alias lsa='exa -lah --icons'
+alias l='exa -lah --icons'
+alias ll='exa -lh --icons'
+alias la='exa -lah --icons'
+alias ls='exa --icons'
+alias l.='exa -d .* --icons'
+alias cat='bat'
 
 # Quick aliases to edit config files
 alias kconf='vim ~/.config/kitty/kitty.conf'
