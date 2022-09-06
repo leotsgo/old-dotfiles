@@ -43,6 +43,7 @@ vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.iskeyword:append("-")
 vim.g.leetcode_solution_filetype = "golang"
 vim.g.leetcode_browser = "firefox"
+vim.g.nvim_markdown_preview_theme = "solarized-dark"
 
 for key, value in pairs(options) do
 	vim.opt[key] = value
