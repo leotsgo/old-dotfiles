@@ -5,6 +5,7 @@ import socket
 from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
+import caps_widget
 from gruvbox.gruvbox import *
 from theme import *
 
@@ -111,7 +112,7 @@ screens = [
                     background=background,
                     foreground=green,
                 ),
-                widget.CapsNumLockIndicator(background=green, foreground=white0, update_interval=0.1),
+                caps_widget.CapsNumLockIndicator(background=green, foreground=white0, update_interval=0.1),
                 widget.TextBox(
                     padding=0,
                     text=separator,
