@@ -90,3 +90,6 @@ source ~/.config/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Rofi custom launchers and powermenu
 export PATH=$HOME/.config/rofi/scripts:$PATH
+
+# Silences direnv console output
+export DIRENV_LOG_FORMAT=""
