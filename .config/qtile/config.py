@@ -43,15 +43,15 @@ keys = [
     Key([mod], "c", lazy.spawn("flameshot gui"), desc="Screenshot tool"),
     Key([mod], "equal", lazy.spawn("amixer -c 1 -q set Master 1%+"), desc="Volume +"),
     Key([mod], "minus", lazy.spawn("amixer -c 1 -q set Master 1%-"), desc="Volume -"),
-    Key([mod], "p", lazy.spawn("launcher_t4"), desc="Prompts rofi"),
+    Key([mod], "p", lazy.spawn("rofi -modi drun,run -show drun -font 'Comic Code Ligatures 17' -show-icons"), desc="Prompts rofi"),
     Key([mod], "s", lazy.spawn("powermenu_t2"), desc="Prompts powermenu"),
-    Key([mod], "f", lazy.spawn("rofi -show filebrowser -font 'Comic Code Ligatures 17' -show-icons"), desc="rofi filebrowser"),
+    # Key([mod], "f", lazy.spawn("rofi -show filebrowser -font 'Comic Code Ligatures 17' -show-icons"), desc="rofi filebrowser"),
 ]
 # fmt: on
 
 groups = []
 group_names = "1234567890"
-group_labels = "一二三四五六七八九十"
+group_labels = "1234567890"
 for i in range(len(group_names)):
     groups.append(Group(name=group_names[i], label=group_labels[i]))
 
@@ -79,7 +79,7 @@ layouts = [
 
 widget_defaults = dict(
     font="Comic Code Ligatures",
-    fontsize=18,
+    fontsize=16,
     padding=5,
     foreground=foreground,
     background=background,
@@ -88,7 +88,7 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        bottom=bar.Bar(
+        top=bar.Bar(
             [
                 widget.CurrentLayoutIcon(
                     background=blue,
