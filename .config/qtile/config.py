@@ -41,8 +41,9 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod], "c", lazy.spawn("flameshot gui"), desc="Screenshot tool"),
-    Key([mod], "equal", lazy.spawn("amixer -c 1 -q set Master 1%+"), desc="Volume +"),
-    Key([mod], "minus", lazy.spawn("amixer -c 1 -q set Master 1%-"), desc="Volume -"),
+    Key([mod], "equal", lazy.spawn("pamixer -i 5"), desc="Volume +"),
+    Key([mod], "minus", lazy.spawn("pamixer -d 5"), desc="Volume -"),
+    Key([mod], "m", lazy.spawn("pamixer -t"), desc="Volume -"),
     Key([mod], "p", lazy.spawn("rofi -modi drun,run -show drun -font 'Comic Code Ligatures 17' -show-icons"), desc="Prompts rofi"),
     Key([mod], "s", lazy.spawn("powermenu_t2"), desc="Prompts powermenu"),
     # Key([mod], "f", lazy.spawn("rofi -show filebrowser -font 'Comic Code Ligatures 17' -show-icons"), desc="rofi filebrowser"),
@@ -124,9 +125,10 @@ screens = [
                     background=yellow,
                     foreground=white0,
                 ),
-                widget.Volume(
+                widget.PulseVolume(
                     background=yellow,
                     foreground=white0,
+                    update_interval=0.1
                 ),
                 widget.TextBox(
                     padding=0,
