@@ -4,3 +4,9 @@
 	signingkey = AB2C228810A1F5EE
 [commit]
 	gpgsign = true
+[alias]
+  ; c = !git add --all && git commit -m
+  s = !git status -s
+  l = !git log --pretty=format:'%C(blue)%h%C(red)%d %C(white)%s - %C(green)%cn, %C(cyan)%cr'
+[push]
+	autoSetupRemote = true
