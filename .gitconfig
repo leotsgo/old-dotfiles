@@ -1,8 +1,6 @@
-U2FsdGVkX180IK2Lq0CDmghq0VF23C1CbDyiBuun7IfDxwsnzH79k8RlsGAgjZ35
-Iyufd6qzWGCu5Z9SdtUOrJHu0BEkxODQ94F+pxIuGx5CMqwOZSKhDUPN/IxctiQx
-lBApH4ddmDvv5uULrHseYNOfUuNDuMPgewhOcC0KX0L74T5KYqdTFCvw8jNxFO+k
-hNjRuOr38Nmmei/SMlBGy+sabkvkBqLL5lvWkZk3bPLveJWh0Pv22jSGMT8wHlfG
-7MRJBEnxikAu4lw45r/MD5kJTr6rcNULsY4c5Vx9OSYf+pnQ+8/2R5JgHndQS4hO
-8lsTbxsKQbjEHU2hYpt8e0G2xC0BCTqCBtvzEep7bLDu6zG2rHLyGvy9eXGvNfkr
-vR59IxAy86ahkVyoZdwdFlqk3ndvPS3IcGlzR8hp7ilnO2RKny6D3pvtGlu/R0lf
-uwoTHUd+4tdAicDsfOABHlCWm6xoxrqlQHw5Z3NSoFl+Flc7d+z4Rytp0A27Q/Zr
+[user]
+	name = Leonardo Diniz
+	email = leonardodiber@gmail.com
+	signingkey = C808E885C07009518D4FC0A5AB2C228810A1F5EE
+[commit]
+	gpgsign = true
