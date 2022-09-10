@@ -1,6 +1,6 @@
 [user]
 	name = Leonardo Diniz
 	email = leonardodiber@gmail.com
-	signingkey = C808E885C07009518D4FC0A5AB2C228810A1F5EE
+	signingkey = AB2C228810A1F5EE
 [commit]
 	gpgsign = true
