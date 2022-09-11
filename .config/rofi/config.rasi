@@ -130,7 +130,7 @@ configuration {
 	kb-mode-complete: "Control+l";
 	kb-row-left: "Control+Page_Up";
 	kb-row-right: "Control+Page_Down";
-	kb-row-down: "Down,Control+n";
+	/* kb-row-down: "Down,Control+n"; */
 	kb-page-prev: "Page_Up";
 	kb-page-next: "Page_Down";
 	kb-row-first: "Home,KP_Home";
@@ -178,5 +178,13 @@ configuration {
 	me-accept-entry: "MouseDPrimary";
 	me-accept-custom: "Control+MouseDPrimary";
 */
+kb-row-up: "Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab";
+kb-row-down: "Down,Control+j";
+kb-accept-entry: "Control+m,Return,KP_Enter";
+terminal: "mate-terminal";
+kb-remove-to-eol: "Control+Shift+e";
+/*kb-mode-next: "Shift+Right,Control+Tab,Control+l";*/
+kb-mode-previous: "Shift+Left,Control+Shift+Tab,Control+h";
+kb-remove-char-back: "BackSpace";
 }
 @theme "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"

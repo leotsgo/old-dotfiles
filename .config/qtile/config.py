@@ -45,7 +45,7 @@ keys = [
     Key([mod], "minus", lazy.spawn("pamixer -d 5"), desc="Volume -"),
     Key([mod], "m", lazy.spawn("pamixer -t"), desc="Volume -"),
     Key([mod], "p", lazy.spawn("rofi -modi drun,run -show drun -font 'Comic Code Ligatures 17' -show-icons"), desc="Prompts rofi"),
-    Key([mod], "s", lazy.spawn("powermenu_t2"), desc="Prompts powermenu"),
+    Key([mod], "s", lazy.spawn("rofi -show p -modi p:rofi-power-menu -font 'Comic Code Ligatures 16' -width 10 -lines 3"), desc="Prompts powermenu"),
     # Key([mod], "f", lazy.spawn("rofi -show filebrowser -font 'Comic Code Ligatures 17' -show-icons"), desc="rofi filebrowser"),
 ]
 # fmt: on
@@ -113,7 +113,9 @@ screens = [
                     background=background,
                     foreground=green,
                 ),
-                caps_widget.CapsNumLockIndicator(background=green, foreground=white0, update_interval=0.1),
+                caps_widget.CapsNumLockIndicator(
+                    background=green, foreground=white0, update_interval=0.1
+                ),
                 widget.TextBox(
                     padding=0,
                     text=separator,
@@ -121,14 +123,12 @@ screens = [
                     background=green,
                 ),
                 widget.TextBox(
-                    text="vol:",
+                    text="",
                     background=yellow,
                     foreground=white0,
                 ),
                 widget.PulseVolume(
-                    background=yellow,
-                    foreground=white0,
-                    update_interval=0.1
+                    background=yellow, foreground=white0, update_interval=0.1
                 ),
                 widget.TextBox(
                     padding=0,
@@ -172,7 +172,9 @@ mouse = [
         lazy.window.set_position_floating(),
         start=lazy.window.get_position(),
     ),
-    Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
+    Drag(
+        [mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()
+    ),
     Click([mod], "Button2", lazy.window.bring_to_front()),
 ]
 

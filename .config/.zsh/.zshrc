@@ -93,3 +93,10 @@ export PATH=$HOME/.config/rofi/scripts:$PATH
 
 # Silences direnv console output
 export DIRENV_LOG_FORMAT=""
+
+# Fly.io
+export FLYCTL_INSTALL=~/.fly
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
+# Deta
+export PATH=~/.deta/bin:$PATH
