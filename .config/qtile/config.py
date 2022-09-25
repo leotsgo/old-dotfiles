@@ -1,3 +1,4 @@
+import re
 from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
@@ -42,7 +43,6 @@ keys = [
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod], "c", lazy.spawn("flameshot gui"), desc="Screenshot tool"),
     Key([mod], "equal", lazy.spawn("pamixer -i 5"), desc="Volume +"),
     Key([mod], "minus", lazy.spawn("pamixer -d 5"), desc="Volume -"),
@@ -78,7 +78,7 @@ for i in groups:
 ############# LAYOUTS #################
 #######################################
 
-layouts_defaults = dict(
+default_layout_options = dict(
     border_focus="#458588",
     border_normal="#665c54",
     border_width=3,
@@ -86,10 +86,20 @@ layouts_defaults = dict(
     margin_on_single=0,
 )
 
+monadtall_options = dict(
+    border_focus="#458588",
+    border_normal="#665c54",
+    border_width=3,
+    margin=3,
+    single_border_width=0,
+    single_margin=0,
+    ratio=0.5
+)
+
 layouts = [
-    layout.Columns(**layouts_defaults),
-    layout.MonadThreeCol(**layouts_defaults),
-    layout.MonadTall(**layouts_defaults),
+    layout.MonadTall(**monadtall_options),
+    layout.Columns(**default_layout_options),
+    layout.MonadThreeCol(**default_layout_options),
     layout.Max(),
 ]
 
@@ -220,6 +230,7 @@ floating_layout = layout.Floating(
         Match(title="branchdialog"),  # gitk
         Match(wm_class="pinentry-gtk-2"),  # GPG key password entry
         Match(wm_class="flameshot"),
+        Match(title=re.compile('^Steam - News.*$')),
     ]
 )
 
