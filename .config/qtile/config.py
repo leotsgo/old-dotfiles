@@ -138,7 +138,7 @@ screens = [
                     urgent_border=warning,
                 ),
                 widget.WindowName(
-                    foreground=background,
+                    foreground=white,
                 ),
                 widget.TextBox(
                     padding=0,
