@@ -147,7 +147,7 @@ screens = [
                     foreground=green,
                 ),
                 caps_widget.CapsNumLockIndicator(
-                    background=green, foreground=white0, update_interval=0.1
+                    background=green, foreground=white0, update_interval=0.01
                 ),
                 widget.TextBox(
                     padding=0,
@@ -161,7 +161,7 @@ screens = [
                     foreground=white0,
                 ),
                 widget.PulseVolume(
-                    background=yellow, foreground=white0, update_interval=0.1
+                    background=yellow, foreground=white0, update_interval=0.01
                 ),
                 widget.TextBox(
                     padding=0,
@@ -171,7 +171,7 @@ screens = [
                 ),
                 widget.Clock(
                     # format='%I:%M %p',
-                    format="%d.%m",
+                    format=" %A | %d/%m ",
                     background=blue,
                     foreground=white0,
                 ),
