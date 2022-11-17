@@ -1,5 +1,5 @@
 xrandr --output HDMI-0 --mode 1920x1080
-setxbmap abtn2
+setxkbmap -layout us -variant intl
 nitrogen --restore
 picom -f &
 twmnd &

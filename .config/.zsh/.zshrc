@@ -100,3 +100,6 @@ export PATH="$FLYCTL_INSTALL/bin:$PATH"
 
 # Deta
 export PATH=~/.deta/bin:$PATH
+
+export GTK_IM_MODULE=cedilla
+export QT_IM_MODULE=cedilla
