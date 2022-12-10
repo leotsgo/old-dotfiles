@@ -47,7 +47,9 @@ ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_UNDERLINE
 
 # Source asdf
 . $HOME/.asdf/asdf.sh
-PATH=$PATH:$(asdf where nodejs)/bin # adds node to PATH
+# PATH=$PATH:$(asdf where nodejs)/bin # adds node to PATH
+PATH="$HOME/.local/bin:$PATH"
+PATH="$PATH:$HOME/go/bin"
 # PATH=$PATH:$(asdf where python)/bin # adds python to PATH
 # PATH=$PATH:$(asdf where golang)/go/bin # adds go to PATH
 
@@ -101,5 +103,5 @@ export PATH="$FLYCTL_INSTALL/bin:$PATH"
 # Deta
 export PATH=~/.deta/bin:$PATH
 
-export GTK_IM_MODULE=cedilla
-export QT_IM_MODULE=cedilla
+# export GTK_IM_MODULE=cedilla
+# export QT_IM_MODULE=cedilla

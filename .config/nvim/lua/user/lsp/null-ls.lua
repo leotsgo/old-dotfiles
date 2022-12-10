@@ -19,8 +19,9 @@ null_ls.setup({
 			extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
 		}),
 		formatting.black.with({ extra_args = { "--fast" } }),
-		-- formatting.isort,
-		formatting.gofmt,
+		formatting.golines.with({
+			extra_args = { "--base-formatter gofumpt" },
+		}),
 		formatting.stylua,
 		diagnostics.flake8,
 		diagnostics.golangci_lint,
