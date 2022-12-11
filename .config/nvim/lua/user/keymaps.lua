@@ -89,6 +89,9 @@ keymap("n", "<leader>g", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise_current()<CR>", opts)
 keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>')
 
+-- GitBlame
+keymap("n", "<leader>b", ":GitBlameToggle<CR>", opts)
+
 -- True-Zen keymaps
 keymap("n", "<leader>zn", ":TZNarrow<CR>", opts)
 keymap("v", "<leader>zn", ":'<,'>TZNarrow<CR>", opts)
