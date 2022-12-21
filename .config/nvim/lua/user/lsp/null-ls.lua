@@ -25,7 +25,7 @@ null_ls.setup({
 		formatting.stylua,
 		diagnostics.flake8,
 		diagnostics.golangci_lint,
-		diagnostics.eslint,
+		diagnostics.eslint_d,
 	},
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then
