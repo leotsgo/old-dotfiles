@@ -4,3 +4,4 @@ nitrogen --restore
 picom -f &
 twmnd &
 flameshot &
+exec /usr/bin/easyeffects --gapplication-service &

@@ -50,6 +50,7 @@ ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_UNDERLINE
 # PATH=$PATH:$(asdf where nodejs)/bin # adds node to PATH
 PATH="$HOME/.local/bin:$PATH"
 PATH="$PATH:$HOME/go/bin"
+PATH="$PATH:/usr/bin"
 # PATH=$PATH:$(asdf where python)/bin # adds python to PATH
 # PATH=$PATH:$(asdf where golang)/go/bin # adds go to PATH
 
