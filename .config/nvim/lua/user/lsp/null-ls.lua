@@ -14,15 +14,12 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup({
 	debug = false,
 	sources = {
-		formatting.prettier.with({
-			extra_filetypes = { "toml" },
-			extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
-		}),
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.golines.with({
 			extra_args = { "--base-formatter gofumpt" },
 		}),
 		formatting.stylua,
+		formatting.eslint_d,
 		diagnostics.flake8,
 		diagnostics.golangci_lint,
 		diagnostics.eslint_d,

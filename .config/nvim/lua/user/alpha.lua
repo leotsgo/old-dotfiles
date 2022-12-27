@@ -24,6 +24,7 @@ dashboard.section.buttons.val = {
 	dashboard.button("t", "ﰍ " .. " Find text", ":Telescope live_grep <CR>"),
 	dashboard.button("up", "ﮮ " .. " Update Plugins", ":PackerUpdate <CR>"),
 	dashboard.button("ut", " " .. " Update TreeSitter", ":TSUpdate <CR>"),
+	dashboard.button("m", " " .. " Open Mason", ":Mason <CR>"),
 	dashboard.button("q", " " .. " Quit", ":qa<CR>"),
 }
 
