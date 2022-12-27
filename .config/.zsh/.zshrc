@@ -62,6 +62,11 @@ autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select # Enable tab completion menu
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' '+l:|=* r:|=*' # Enable tab completion based on what's already written
 
+# autoload edit command in vim
+autoload edit-command-line
+zle -N edit-command-line
+bindkey '^Xe' edit-command-line
+
 # Source aliases
 source $HOME/.config/.zsh/aliases.zsh
 
@@ -85,6 +90,7 @@ source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
 
 # exports
 export SUDO_EDITOR=$(asdf which nvim)
+export EDITOR=$(asdf which nvim)
 export GOPATH="$HOME/go"
 export ZSH_COMPDUMP=~/.cache/.zcompdump-$HOST
 
