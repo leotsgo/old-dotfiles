@@ -10,3 +10,4 @@
   l = !git log --pretty=format:'%C(blue)%h%C(red)%d %C(white)%s - %C(green)%cn, %C(cyan)%cr'
 [push]
 	autoSetupRemote = true
+
