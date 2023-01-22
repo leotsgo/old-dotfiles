@@ -95,10 +95,15 @@ return packer.startup(function(use)
 			{ "rafamadriz/friendly-snippets" },
 		},
 	})
-
 	use({ "jose-elias-alvarez/null-ls.nvim" })
 	use({ "RRethy/vim-illuminate" })
 	use({ "simrat39/rust-tools.nvim" })
+
+	-- DAP
+	use({ "mfussenegger/nvim-dap" })
+	use({ "rcarriga/nvim-dap-ui" })
+	use({ "leoluz/nvim-dap-go" })
+	use({ "theHamsta/nvim-dap-virtual-text" })
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim" })
