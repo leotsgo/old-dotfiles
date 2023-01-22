@@ -90,7 +90,7 @@ keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise_curren
 keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>')
 
 -- GitBlame
-keymap("n", "<leader>b", ":GitBlameToggle<CR>", opts)
+keymap("n", "<leader>gb", ":GitBlameToggle<CR>", opts)
 
 -- True-Zen keymaps
 keymap("n", "<leader>zn", ":TZNarrow<CR>", opts)
@@ -130,8 +130,8 @@ end, opts)
 
 -- DAP
 keymap("n", "<F5>", ":lua require'dap'.continue()<CR>", opts)
-keymap("n", "<F3>", ":lua require'dap'.step_over()<CR>", opts)
 keymap("n", "<F2>", ":lua require'dap'.step_into()<CR>", opts)
+keymap("n", "<F3>", ":lua require'dap'.step_over()<CR>", opts)
 keymap("n", "<F12>", ":lua require'dap'.step_out()<CR>", opts)
 keymap("n", "<leader>b", ":lua require'dap'.toggle_breakpoint()<CR>", opts)
 keymap("n", "<leader>B", ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", opts)
