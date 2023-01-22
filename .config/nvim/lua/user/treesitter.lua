@@ -1,5 +1,6 @@
 local status_ok, configs = pcall(require, "nvim-treesitter.configs")
-if not status_ok then
+local context_ok, ts_context = pcall(require, "treesitter-context")
+if not (status_ok or ts_context) then
 	return
 end
 
@@ -21,3 +22,5 @@ configs.setup({
 		max_file_lines = nil,
 	},
 })
+
+ts_context.setup()

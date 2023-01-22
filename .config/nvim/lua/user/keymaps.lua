@@ -1,10 +1,10 @@
 -- Shorten function name
-local keymap = vim.keymap.set
+local keymap = vim.api.nvim_set_keymap
 -- Silent keymap option
 local opts = { silent = true }
 
 --Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
+--keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 
 -- Modes
@@ -33,7 +33,7 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Clear highlights
-keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
+keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", { unpack(opts), desc = "Clear highlights" })
 
 -- Close buffers
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
@@ -83,11 +83,21 @@ keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
 -- Git
-keymap("n", "<leader>g", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
+keymap("n", "<leader>g", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", { unpack(opts), desc = "Opens LazyGit" })
 
 -- Comment
-keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise_current()<CR>", opts)
-keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>')
+keymap(
+	"n",
+	"<leader>/",
+	"<cmd>lua require('Comment.api').toggle.linewise_current()<CR>",
+	{ unpack(opts), desc = "Comment" }
+)
+keymap(
+	"x",
+	"<leader>/",
+	'<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>',
+	{ unpack(opts), desc = "Comment" }
+)
 
 -- GitBlame
 keymap("n", "<leader>gb", ":GitBlameToggle<CR>", opts)
@@ -100,42 +110,38 @@ keymap("n", "<leader>zm", ":TZMinimalist<CR>", opts)
 keymap("n", "<leader>za", ":TZAtaraxis<CR>", opts)
 
 -- Harpoon
-keymap("n", "<leader>a", function()
-	require("harpoon.mark").add_file()
-end, opts)
+keymap("n", "<leader>a", ":lua require'harpoon.mark'.add_file()<CR>", opts)
 
-keymap("n", "<C-e>", function()
-	require("harpoon.ui").toggle_quick_menu()
-end, opts)
+keymap("n", "<C-e>", ":lua require'harpoon.ui'.toggle_quick_menu()<CR>", opts)
 
-keymap("n", "<leader>tc", function()
-	require("harpoon.cmd-ui").toggle_quick_menu()
-end, opts)
+keymap("n", "<leader>tc", ":lua	require'harpoon.cmd-ui'.toggle_quick_menu()<CR>", opts)
 
-keymap("n", "<C-1>", function()
-	require("harpoon.ui").nav_file(1)
-end, opts)
+keymap("n", "<C-1>", ":lua require'harpoon.ui'.nav_file(1)<CR>", opts)
 
-keymap("n", "<C-2>", function()
-	require("harpoon.ui").nav_file(2)
-end, opts)
+keymap("n", "<C-2>", ":lua require'harpoon.ui'.nav_file(2)<CR>", opts)
 
-keymap("n", "<C-3>", function()
-	require("harpoon.ui").nav_file(3)
-end, opts)
+keymap("n", "<C-3>", ":lua require'harpoon.ui'.nav_file(3)<CR>", opts)
 
-keymap("n", "<C-4>", function()
-	require("harpoon.ui").nav_file(4)
-end, opts)
+keymap("n", "<C-4>", ":lua require'harpoon.ui'.nav_file(4)<CR>", opts)
 
 -- DAP
-keymap("n", "<F5>", ":lua require'dap'.continue()<CR>", opts)
-keymap("n", "<F2>", ":lua require'dap'.step_into()<CR>", opts)
-keymap("n", "<F3>", ":lua require'dap'.step_over()<CR>", opts)
-keymap("n", "<F12>", ":lua require'dap'.step_out()<CR>", opts)
-keymap("n", "<leader>b", ":lua require'dap'.toggle_breakpoint()<CR>", opts)
-keymap("n", "<leader>B", ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", opts)
-keymap("n", "<leader>lp", ":lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>", opts)
+keymap("n", "<F5>", ":lua require'dap'.continue()<CR>", { unpack(opts), desc = "Continue" })
+keymap("n", "<F2>", ":lua require'dap'.step_into()<CR>", { unpack(opts), desc = "Step into" })
+keymap("n", "<F3>", ":lua require'dap'.step_over()<CR>", { unpack(opts), desc = "Step over" })
+keymap("n", "<F12>", ":lua require'dap'.step_out()<CR>", { unpack(opts), desc = "Step out" })
+keymap("n", "<leader>b", ":lua require'dap'.toggle_breakpoint()<CR>", { unpack(opts), desc = "Set a breakpoint" })
+keymap(
+	"n",
+	"<leader>B",
+	":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",
+	{ unpack(opts), desc = "Condtional breakpoint" }
+)
+keymap(
+	"n",
+	"<leader>dl",
+	":lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>",
+	{ unpack(opts), desc = "Log point" }
+)
 keymap("n", "<leader>dr", ":lua require'dap'.repl.open()<CR>", opts)
-keymap("n", "<leader>dt", ":lua require'dap-go'.debug_test()<CR>", opts)
-keymap("n", "<leader>do", ":lua require'dapui'.toggle()<CR>", opts)
+keymap("n", "<leader>dt", ":lua require'dap-go'.debug_test()<CR>", { unpack(opts), desc = "Start go test" })
+keymap("n", "<leader>do", ":lua require'dapui'.toggle()<CR>", { unpack(opts), desc = "Toggle UI" })

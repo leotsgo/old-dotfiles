@@ -67,6 +67,7 @@ return packer.startup(function(use)
 	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
 	use({ "davidgranstrom/nvim-markdown-preview" })
 	use({ "f-person/git-blame.nvim" })
+	use({ "folke/which-key.nvim" })
 
 	-- Colorschemes
 	-- use({ "gruvbox-community/gruvbox" })
@@ -111,6 +112,7 @@ return packer.startup(function(use)
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter" })
 	use({ "p00f/nvim-ts-rainbow" })
+	use({ "nvim-treesitter/nvim-treesitter-context" })
 
 	-- Git
 	use({ "lewis6991/gitsigns.nvim" })
