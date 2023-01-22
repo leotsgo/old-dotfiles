@@ -67,7 +67,6 @@ return packer.startup(function(use)
 	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
 	use({ "davidgranstrom/nvim-markdown-preview" })
 	use({ "f-person/git-blame.nvim" })
-	use({ "folke/which-key.nvim" })
 
 	-- Colorschemes
 	-- use({ "gruvbox-community/gruvbox" })
