@@ -2,12 +2,10 @@ import re
 from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
-import caps_widget
-from gruvbox.gruvbox import *
-from theme import *
+from catppuccin_macchiato import *
 
 #######################################
-############ DEFAULTS #################  
+############ DEFAULTS #################
 #######################################
 
 mod = "mod4"
@@ -57,7 +55,7 @@ keys = [
 # fmt: on
 
 #######################################
-############## GROUPS #################  
+############## GROUPS #################
 #######################################
 
 groups = []
@@ -93,7 +91,7 @@ monadtall_options = dict(
     margin=3,
     single_border_width=0,
     single_margin=0,
-    ratio=0.5
+    ratio=0.5,
 )
 
 layouts = [
@@ -111,8 +109,8 @@ widget_defaults = dict(
     font="Comic Code Ligatures",
     fontsize=16,
     padding=5,
-    foreground=foreground,
-    background=background,
+    foreground=subtext_1,
+    background=base,
 )
 extension_defaults = widget_defaults.copy()
 
@@ -125,70 +123,61 @@ screens = [
         top=bar.Bar(
             [
                 widget.CurrentLayoutIcon(
-                    background=blue,
+                    background=lavender,
                 ),
                 widget.GroupBox(
                     disable_drag=True,
                     spacing=0,
                     center_aligned=True,
-                    active=active,
-                    inactive=inactive,
-                    highlight_method="block",
-                    this_current_screen_border=mark,
-                    urgent_border=warning,
+                    active=text,
+                    inactive=base,
+                    highlight_method="line",
+                    this_current_screen_border=lavender,
+                    urgent_border=red,
                 ),
                 widget.WindowName(
-                    foreground=white,
+                    foreground=text,
                 ),
                 widget.TextBox(
                     padding=0,
                     text=separator,
-                    background=background,
+                    background=base,
                     foreground=green,
-                ),
-                caps_widget.CapsNumLockIndicator(
-                    background=green, foreground=white0, update_interval=0.01
-                ),
-                widget.TextBox(
-                    padding=0,
-                    text=separator,
-                    foreground=yellow,
-                    background=green,
                 ),
                 widget.TextBox(
                     text="",
-                    background=yellow,
-                    foreground=white0,
+                    background=green,
+                    foreground=crust,
                 ),
                 widget.PulseVolume(
-                    background=yellow, foreground=white0, update_interval=0.01
+                    background=green, foreground=crust, update_interval=0.01
                 ),
                 widget.TextBox(
                     padding=0,
                     text=separator,
-                    foreground=blue,
-                    background=yellow,
+                    foreground=teal,
+                    background=green,
                 ),
                 widget.Clock(
                     # format='%I:%M %p',
                     format=" %A | %d/%m ",
-                    background=blue,
-                    foreground=white0,
+                    background=teal,
+                    foreground=crust,
                 ),
                 widget.TextBox(
                     padding=0,
                     text=separator,
-                    foreground=purple,
-                    background=blue,
+                    foreground=sapphire,
+                    background=teal,
                 ),
                 widget.Clock(
                     # format='%d.%m.%Y',
                     format="%H:%M",
-                    background=purple,
-                    foreground=white0,
+                    background=sapphire,
+                    foreground=crust,
                 ),
                 widget.Systray(
-                    background=purple,
+                    background=sapphire,
                     icon_size=15,
                 ),
             ],
@@ -230,7 +219,7 @@ floating_layout = layout.Floating(
         Match(title="branchdialog"),  # gitk
         Match(wm_class="pinentry-gtk-2"),  # GPG key password entry
         Match(wm_class="flameshot"),
-        Match(title=re.compile('^Steam - News.*$')),
+        Match(title=re.compile("^Steam - News.*$")),
     ]
 )
 
