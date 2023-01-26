@@ -72,6 +72,7 @@ return packer.startup(function(use)
 	-- use({ "gruvbox-community/gruvbox" })
 	use({ "ellisonleao/gruvbox.nvim" })
 	-- use({ "xiyaowong/nvim-transparent" })
+	use({ "catppuccin/nvim", as = "catppuccin" })
 
 	-- LSP
 	use({

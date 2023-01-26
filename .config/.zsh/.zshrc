@@ -95,6 +95,7 @@ export GOPATH="$HOME/go"
 export ZSH_COMPDUMP=~/.cache/.zcompdump-$HOST
 
 # Source zsh-syntax-highlighting
+source ~/.config/.zsh/zsh-syntax-highlighting/catppuccin_macchiato-zsh-syntax-highlighting.zsh
 source ~/.config/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Rofi custom launchers and powermenu
