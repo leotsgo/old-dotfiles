@@ -64,3 +64,9 @@ function yl() {
   yadm enter lazygit
   cd $dir
 }
+
+function pnotes() {
+  cd $HOME/notes 
+  git add --all && git commit -m "$(date)"
+  git push
+}
