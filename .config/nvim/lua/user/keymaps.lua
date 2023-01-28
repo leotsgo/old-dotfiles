@@ -44,7 +44,8 @@ keymap("v", "<C-s>", "<C-C>:update<CR>", opts)
 keymap("i", "<C-s>", "<C-O>:update<CR>", opts)
 
 -- Copies buffer full path to clipboard
-keymap("n", "<C-f>", ":let @+ = expand('%:p')<CR>", opts)
+keymap("n", "<C-p>", ":let @+ = expand('%:p')<CR>", opts)
+keymap("n", "<C-f>", ":LspZeroFormat<CR>", opts)
 
 -- CTRL + q to quit
 keymap("n", "<C-q>", ":q<CR>", opts)
