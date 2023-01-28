@@ -18,6 +18,7 @@ if [ -f /etc/os-release ]; then
 fi
 
 .$HOME/bootstrap/generate_gitconfig.sh
+.$HOME/bootstrap/pullnotes.sh
 setxkbmap -layout us -variant intl
 nitrogen --restore
 picom -f &
