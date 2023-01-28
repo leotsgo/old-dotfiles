@@ -8,7 +8,7 @@ git config --global alias.l "!git log --pretty=format:'%C(blue)%h%C(red)%d %C(wh
 
 if [ -f /etc/os-release ]; then
 	. /etc/os-release
-	case $NAME in
+	case "$NAME" in
 	"$HOME_OS")
 		git config --global user.signingkey "AB2C228810A1F5EE"
 		git config --global user.email "$PERSONAL_EMAIL"
