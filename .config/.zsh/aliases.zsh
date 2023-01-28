@@ -67,12 +67,16 @@ function yl() {
 
 # pull and push notes to my obsidian repo
 function pushnotes() {
+  local dir="$(pwd)"
   cd $HOME/notes 
   git add --all && git commit -m "$(date)"
   git push
+  cd $dir
 }
 
 function pullnotes() {
+  local dir="$(pwd)"
   cd $HOME/notes
   git pull
+  cd $dir
 }
