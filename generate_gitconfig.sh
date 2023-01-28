@@ -20,7 +20,7 @@ git config --global alias.l "!git log --pretty=format:'%C(blue)%h%C(red)%d %C(wh
 
 case $IS_WORK in 
   "0")
-    git config --global user.signingkey "AB2C228810A1F5E";
+    git config --global user.signingkey "AB2C228810A1F5EE";
     git config --global user.email "leonardodiber@gmail.com"
     git config --global commit.gpgsign true;
     ;;
