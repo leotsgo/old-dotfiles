@@ -1,0 +1,3 @@
+# reference directory /etc/udev/rules.d
+# https://www.facility9.com/2019/07/09/remapping-keys-in-linux/
+ACTION=="add", ATTRS{idVendor}=="****", ATTRS{idProduct}=="****",RUN+="/bin/sh -c 'DISPLAY=:0.0 XAUTHORITY=/home/leodiber/.Xauthority sh -c \"setxkbmap -layout us -variant intl\" &'"
