@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ./default_variables.sh
+. $HOME/bootstrap/default_variables.sh
 git config --global user.name "Leonardo Diniz"
 git config --global push.autoSetupRemote true
 git config --global alias.s "!git status -s"
