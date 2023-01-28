@@ -51,9 +51,16 @@ ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_UNDERLINE
 PATH="$HOME/.local/bin:$PATH"
 PATH="$PATH:$HOME/go/bin"
 PATH="$PATH:/usr/bin"
-PATH+=:~/.cargo/bin
-# PATH=$PATH:$(asdf where python)/bin # adds python to PATH
-# PATH=$PATH:$(asdf where golang)/go/bin # adds go to PATH
+
+if [ -f /etc/os-release ]; then
+  . /etc/os-release;
+  case $NAME in 
+        "Arch Linux")
+          PATH+=:~/.cargo/bin
+          ;;
+  esac
+fi
+
 
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
@@ -66,7 +73,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' '+l:|=* r:|=*' # Enable t
 # autoload edit command in vim
 autoload edit-command-line
 zle -N edit-command-line
-bindkey '^Xe' edit-command-line
+bindkey -M vicmd 'vv' edit-command-line
 
 # Source aliases
 source $HOME/.config/.zsh/aliases.zsh

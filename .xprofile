@@ -1,7 +1,22 @@
-xrandr --output HDMI-0 --mode 1920x1080
+#!/bin/bash
+if [ -f /etc/os-release ]; then
+  . /etc/os-release;
+  case $NAME in
+    "Ubuntu")
+      xrandr --output eDP-1 --off
+      xrandr --output HDMI-1 --mode 1920x1080
+      ;;
+    
+    "Arch Linux")
+      xrandr --output HDMI-0 --mode 1920x1080
+      twmnd &
+      exec /usr/bin/easyeffects --gapplication-service &
+      ;;
+  esac
+fi
+
 setxkbmap -layout us -variant intl
 nitrogen --restore
 picom -f &
-twmnd &
 flameshot &
-exec /usr/bin/easyeffects --gapplication-service &
+
