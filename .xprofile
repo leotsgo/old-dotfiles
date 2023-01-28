@@ -1,6 +1,4 @@
 #!/bin/bash
-. $HOME/bootstrap/default_variables.sh
-
 if [ -f /etc/os-release ]; then
 	. /etc/os-release
 	case $NAME in
@@ -17,8 +15,7 @@ if [ -f /etc/os-release ]; then
 	esac
 fi
 
-.$HOME/bootstrap/generate_gitconfig.sh
-.$HOME/bootstrap/pullnotes.sh
+./bootstrap/generate_gitconfig.sh
 setxkbmap -layout us -variant intl
 nitrogen --restore
 picom -f &
