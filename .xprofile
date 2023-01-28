@@ -15,6 +15,7 @@ if [ -f /etc/os-release ]; then
   esac
 fi
 
+./generate_gitconfig.sh
 setxkbmap -layout us -variant intl
 nitrogen --restore
 picom -f &
