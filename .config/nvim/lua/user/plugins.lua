@@ -57,9 +57,7 @@ return packer.startup(function(use)
 	use({ "goolord/alpha-nvim" })
 	use({ "wellle/targets.vim" })
 	use({ "fatih/vim-go" })
-	use({ "github/copilot.vim" })
 	use({ "andweeb/presence.nvim" })
-	use({ "ianding1/leetcode.vim" })
 	use({ "kylechui/nvim-surround" })
 	use({ "akinsho/toggleterm.nvim" })
 	use({ "Pocco81/true-zen.nvim" })
@@ -69,9 +67,6 @@ return packer.startup(function(use)
 	use({ "f-person/git-blame.nvim" })
 
 	-- Colorschemes
-	-- use({ "gruvbox-community/gruvbox" })
-	use({ "ellisonleao/gruvbox.nvim" })
-	-- use({ "xiyaowong/nvim-transparent" })
 	use({ "catppuccin/nvim", as = "catppuccin" })
 
 	-- LSP
