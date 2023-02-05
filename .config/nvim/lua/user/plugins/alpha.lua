@@ -1,4 +1,9 @@
-local status_ok, alpha = pcall(require, "alpha")
+
+return
+  {
+    'goolord/alpha-nvim',
+    config = function ()
+      local status_ok, alpha = pcall(require, "alpha")
 if not status_ok then
 	return
 end
@@ -45,5 +50,9 @@ dashboard.opts.layout = {
 	dashboard.section.buttons,
 	dashboard.section.footer,
 }
+    alpha.setup(dashboard.opts)
+    end
+ }
 
-alpha.setup(dashboard.opts)
+
+--alpha.setup(dashboard.opts)
