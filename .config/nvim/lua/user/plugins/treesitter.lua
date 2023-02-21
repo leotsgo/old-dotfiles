@@ -1,8 +1,11 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  "p00f/nvim-ts-rainbow",
-  "nvim-treesitter/nvim-treesitter-context",
-  "JoosepAlviste/nvim-ts-context-commentstring",
+  dependencies = {
+    { "p00f/nvim-ts-rainbow" },
+    { "nvim-treesitter/nvim-treesitter-context" },
+    { "JoosepAlviste/nvim-ts-context-commentstring" },
+  },
+  lazy = false,
   config = function()
     local status_ok, configs = pcall(require, "nvim-treesitter.configs")
     local context_ok, ts_context = pcall(require, "treesitter-context")
