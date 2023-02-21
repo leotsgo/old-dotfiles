@@ -131,8 +131,8 @@ end, opts)
 
 -- DAP
 keymap("n", "<F5>", ":lua require'dap'.continue()<CR>", opts)
-keymap("n", "<F2>", ":lua require'dap'.step_into()<CR>", opts)
-keymap("n", "<F3>", ":lua require'dap'.step_over()<CR>", opts)
+keymap("n", "<F3>", ":lua require'dap'.step_into()<CR>", opts)
+keymap("n", "<F4>", ":lua require'dap'.step_over()<CR>", opts)
 keymap("n", "<F12>", ":lua require'dap'.step_out()<CR>", opts)
 keymap("n", "<leader>b", ":lua require'dap'.toggle_breakpoint()<CR>", opts)
 keymap("n", "<leader>B", ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", opts)
