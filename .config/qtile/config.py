@@ -96,9 +96,9 @@ monadtall_options = dict(
 )
 
 layouts = [
-    layout.MonadTall(**monadtall_options),
     layout.Columns(**default_layout_options),
     layout.MonadThreeCol(**default_layout_options),
+    layout.MonadTall(**monadtall_options),
     layout.Max(),
 ]
 
