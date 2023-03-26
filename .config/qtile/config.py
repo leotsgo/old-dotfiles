@@ -137,9 +137,11 @@ screens = [
                     this_current_screen_border=lavender,
                     urgent_border=red,
                 ),
+                widget.Spacer(),
                 widget.WindowName(
                     foreground=text,
                 ),
+                widget.Spacer(),
                 widget.TextBox(
                     padding=0,
                     text=separator,
