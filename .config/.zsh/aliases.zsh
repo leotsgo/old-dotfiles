@@ -81,3 +81,11 @@ function pullnotes() {
   git pull
   cd $dir
 }
+
+# cleans zcompdump files
+function clearzcompdump() {
+  local dir="$(pwd)"
+  cd $HOME
+  rm .zcompdump*
+  cd $dir
+}
