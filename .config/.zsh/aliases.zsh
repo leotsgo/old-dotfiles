@@ -57,6 +57,7 @@ alias update-nvim-master='asdf uninstall neovim ref:master && asdf install neovi
 alias p10k-update='git -C ~/.config/.zsh/powerlevel10k pull'
 alias resource='echo Reshiming and resourcing... && asdf reshim && source ~/.zshrc && echo Done!'
 alias grep='grep --color=auto'
+alias lg='lazygit'
 
 # yadm
 function yl() {
