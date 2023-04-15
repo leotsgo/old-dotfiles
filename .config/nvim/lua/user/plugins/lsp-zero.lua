@@ -1,31 +1,31 @@
 return {
-    "VonHeikemen/lsp-zero.nvim",
-    branch = "v1.x",
-    lazy = false,
-    dependencies = {
-        -- LSP Support
-        { "neovim/nvim-lspconfig" }, -- Required
-        { "williamboman/mason.nvim" }, -- Optional
-        { "williamboman/mason-lspconfig.nvim" }, -- Optional
+	"VonHeikemen/lsp-zero.nvim",
+	branch = "v1.x",
+	lazy = false,
+	dependencies = {
+		-- LSP Support
+		{ "neovim/nvim-lspconfig" }, -- Required
+		{ "williamboman/mason.nvim" }, -- Optional
+		{ "williamboman/mason-lspconfig.nvim" }, -- Optional
 
-        -- Autocompletion
-        { "hrsh7th/nvim-cmp" }, -- Required
-        { "hrsh7th/cmp-nvim-lsp" }, -- Required
-        { "hrsh7th/cmp-buffer" }, -- Optional
-        { "hrsh7th/cmp-path" }, -- Optional
-        { "saadparwaiz1/cmp_luasnip" }, -- Optional
-        { "hrsh7th/cmp-nvim-lua" }, -- Optional
+		-- Autocompletion
+		{ "hrsh7th/nvim-cmp" }, -- Required
+		{ "hrsh7th/cmp-nvim-lsp" }, -- Required
+		{ "hrsh7th/cmp-buffer" }, -- Optional
+		{ "hrsh7th/cmp-path" }, -- Optional
+		{ "saadparwaiz1/cmp_luasnip" }, -- Optional
+		{ "hrsh7th/cmp-nvim-lua" }, -- Optional
 
-        -- Snippets
-        { "L3MON4D3/LuaSnip" }, -- Required
-        { "rafamadriz/friendly-snippets" }, -- Optional
-    },
-    config = function()
-      local lsp = require("lsp-zero")
-      lsp.preset("recommended")
-      require("mason").setup({ ui = { border = "rounded" } })
-      lsp.nvim_workspace()
-      lsp.setup()
-      require("lspconfig.ui.windows").default_options.border = "rounded"
-    end,
+		-- Snippets
+		{ "L3MON4D3/LuaSnip" }, -- Required
+		{ "rafamadriz/friendly-snippets" }, -- Optional
+	},
+	config = function()
+		local lsp = require("lsp-zero")
+		lsp.preset("recommended")
+		require("mason").setup({ ui = { border = "rounded" } })
+		lsp.nvim_workspace()
+		lsp.setup()
+		require("lspconfig.ui.windows").default_options.border = "rounded"
+	end,
 }
