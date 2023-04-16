@@ -3,7 +3,6 @@ return {
   dependencies = {
     { "p00f/nvim-ts-rainbow" },
     { "nvim-treesitter/nvim-treesitter-context" },
-    { "JoosepAlviste/nvim-ts-context-commentstring" },
   },
   lazy = false,
   config = function()
@@ -17,9 +16,8 @@ return {
       ensure_installed = "all", -- one of "all" or a list of languages
       auto_install = true,
       ignore_install = { "" }, -- List of parsers to ignore installing
-      context_commentstring = { enable = true },
       highlight = {
-        enable = true, -- false will disable the whole extension
+        enable = true,       -- false will disable the whole extension
         disable = { "css" }, -- list of language that will be disabled
       },
       autopairs = {
