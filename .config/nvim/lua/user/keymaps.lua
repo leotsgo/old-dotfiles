@@ -102,31 +102,31 @@ keymap("n", "<leader>za", ":TZAtaraxis<CR>", opts)
 
 -- Harpoon
 keymap("n", "<leader>a", function()
-	require("harpoon.mark").add_file()
+  require("harpoon.mark").add_file()
 end, opts)
 
 keymap("n", "<C-e>", function()
-	require("harpoon.ui").toggle_quick_menu()
+  require("harpoon.ui").toggle_quick_menu()
 end, opts)
 
 keymap("n", "<leader>tc", function()
-	require("harpoon.cmd-ui").toggle_quick_menu()
+  require("harpoon.cmd-ui").toggle_quick_menu()
 end, opts)
 
 keymap("n", "<C-1>", function()
-	require("harpoon.ui").nav_file(1)
+  require("harpoon.ui").nav_file(1)
 end, opts)
 
 keymap("n", "<C-2>", function()
-	require("harpoon.ui").nav_file(2)
+  require("harpoon.ui").nav_file(2)
 end, opts)
 
 keymap("n", "<C-3>", function()
-	require("harpoon.ui").nav_file(3)
+  require("harpoon.ui").nav_file(3)
 end, opts)
 
 keymap("n", "<C-4>", function()
-	require("harpoon.ui").nav_file(4)
+  require("harpoon.ui").nav_file(4)
 end, opts)
 
 -- DAP
@@ -140,3 +140,6 @@ keymap("n", "<leader>lp", ":lua require'dap'.set_breakpoint(nil, nil, vim.fn.inp
 keymap("n", "<leader>dr", ":lua require'dap'.repl.open()<CR>", opts)
 keymap("n", "<leader>dt", ":lua require'dap-go'.debug_test()<CR>", opts)
 keymap("n", "<leader>do", ":lua require'dapui'.toggle()<CR>", opts)
+
+-- HOP
+keymap("n", "<leader>h", ":HopWord<CR>", opts)
