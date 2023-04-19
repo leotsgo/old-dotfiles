@@ -1,4 +1,4 @@
 return {
-  "justinmk/vim-sneak",
-  lazy = false,
+	"justinmk/vim-sneak",
+	event = { "BufRead", "BufEnter" },
 }

@@ -1,6 +1,6 @@
 return {
 	"nvim-lualine/lualine.nvim",
-	lazy = false,
+	event = "BufRead",
 	config = function()
 		local status_ok, lualine = pcall(require, "lualine")
 		if not status_ok then

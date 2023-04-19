@@ -78,6 +78,9 @@ bindkey -M vicmd 'vv' edit-command-line
 # Source aliases
 source $HOME/.config/.zsh/aliases.zsh
 
+# source nvims
+source $HOME/.config/.zsh/nvims.zsh
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 

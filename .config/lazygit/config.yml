@@ -3,6 +3,7 @@ git:
 gui:
   theme:
     lightTheme: false 
+    showIcons: true
     activeBorderColor:
       - "#a6da95" # Green
       - bold
