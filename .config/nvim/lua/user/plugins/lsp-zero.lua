@@ -38,6 +38,13 @@ return {
 			},
 		})
 
+		lsp.set_sign_icons({
+			error = "✘",
+			warn = "▲",
+			hint = "⚑",
+			info = "»",
+		})
+
 		cmp.setup({
 			mapping = {
 				["<CR>"] = cmp.mapping.confirm({ select = false }),

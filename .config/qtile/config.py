@@ -107,7 +107,7 @@ layouts = [
 #######################################
 
 widget_defaults = dict(
-    font="Comic Code Ligatures",
+    font="Source Code Pro",
     fontsize=16,
     padding=5,
     foreground=subtext_1,
@@ -142,12 +142,12 @@ screens = [
                     foreground=text,
                 ),
                 widget.Spacer(),
-                widget.TextBox(
-                    padding=0,
-                    text=separator,
-                    background=base,
-                    foreground=green,
-                ),
+                # widget.TextBox(
+                #     padding=0,
+                #     text=separator,
+                #     background=base,
+                #     foreground=green,
+                # ),
                 widget.TextBox(
                     text="",
                     background=green,
@@ -156,24 +156,24 @@ screens = [
                 widget.PulseVolume(
                     background=green, foreground=crust, update_interval=0.01
                 ),
-                widget.TextBox(
-                    padding=0,
-                    text=separator,
-                    foreground=teal,
-                    background=green,
-                ),
+                # widget.TextBox(
+                #     padding=0,
+                #     text=separator,
+                #     foreground=teal,
+                #     background=green,
+                # ),
                 widget.Clock(
                     # format='%I:%M %p',
                     format=" %A | %d/%m ",
                     background=teal,
                     foreground=crust,
                 ),
-                widget.TextBox(
-                    padding=0,
-                    text=separator,
-                    foreground=sapphire,
-                    background=teal,
-                ),
+                # widget.TextBox(
+                #     padding=0,
+                #     text=separator,
+                #     foreground=sapphire,
+                #     background=teal,
+                # ),
                 widget.Clock(
                     # format='%d.%m.%Y',
                     format="%H:%M",
