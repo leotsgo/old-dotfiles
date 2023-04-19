@@ -46,6 +46,10 @@ return {
 			return vim.fn.winwidth(0) > 80
 		end
 
+		local codeium_status = function()
+			return "{...}" .. vim.fn["codeium#GetStatusString"]()
+		end
+
 		local diagnostics = {
 			"diagnostics",
 			sources = { "nvim_diagnostic" },
@@ -98,6 +102,7 @@ return {
 				lualine_c = {
 					diagnostics,
 					{ "macro-recording", fmt = show_macro_recording, color = { fg = "#8aadf4" } },
+					{ "codeium", fmt = codeium_status },
 					filename,
 				},
 				lualine_x = { diff, spaces, "encoding", filetype },
