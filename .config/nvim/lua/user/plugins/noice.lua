@@ -69,6 +69,5 @@ return {
 				},
 			},
 		})
-		vim.cmd("hi NoiceMini guibg=#363a4f")
 	end,
 }
