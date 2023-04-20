@@ -6,15 +6,13 @@ return {
 	config = function()
 		-- load the colorscheme here
 		require("catppuccin").setup({
+			transparent_background = true,
 			integrations = {
 				vim_sneak = true,
 				ts_rainbow = true,
-				noice = true,
-				notify = true,
 				illuminate = true,
 				hop = true,
 				harpoon = true,
-				treesitter_context = true,
 				indent_blankline = {
 					enabled = true,
 					colored_indent_levels = false,

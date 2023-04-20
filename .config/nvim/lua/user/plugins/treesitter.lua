@@ -2,22 +2,20 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	dependencies = {
 		{ "p00f/nvim-ts-rainbow" },
-		{ "nvim-treesitter/nvim-treesitter-context" },
 	},
 	version = false, -- last release is way too old and doesn't work on Windows
 	build = ":TSUpdate",
 	event = { "BufReadPost", "BufNewFile" },
 	config = function()
 		local status_ok, configs = pcall(require, "nvim-treesitter.configs")
-		local context_ok, ts_context = pcall(require, "treesitter-context")
-		if not (status_ok or context_ok) then
+		if not status_ok then
 			return
 		end
 
 		configs.setup({
 			ensure_installed = "all", -- one of "all" or a list of languages
 			auto_install = true,
-			ignore_install = { "" }, -- List of parsers to ignore installing
+			ignore_install = { "smali" }, -- List of parsers to ignore installing
 			incremental_selection = { enable = true },
 			highlight = {
 				enable = true, -- false will disable the whole extension
@@ -33,7 +31,5 @@ return {
 				max_file_lines = nil,
 			},
 		})
-
-		ts_context.setup()
 	end,
 }

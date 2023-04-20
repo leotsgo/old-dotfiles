@@ -1,13 +1,28 @@
 return {
 	"folke/noice.nvim",
-	event = "VeryLazy",
+	-- event = "VeryLazy",
+	-- after = "catppuccin",
 	dependencies = {
 		{ "MunifTanjim/nui.nvim" },
-		{ "rcarriga/nvim-notify" },
+		{
+			"rcarriga/nvim-notify",
+			config = function()
+				local notify = require("notify")
+				notify.setup({
+					background_colour = "#24273A",
+				})
+				vim.notify = notify
+			end,
+		},
 	},
 	config = function()
 		require("noice").setup({
 			lsp = {
+				progress = {
+					enabled = true,
+					view = "mini",
+					format = "lsp_progress",
+				},
 				-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
 				override = {
 					["vim.lsp.util.convert_input_to_markdown_lines"] = true,
@@ -21,7 +36,7 @@ return {
 				command_palette = true, -- position the cmdline and popupmenu together
 				long_message_to_split = true, -- long messages will be sent to a split
 				inc_rename = false, -- enables an input dialog for inc-rename.nvim
-				lsp_doc_border = false, -- add a border to hover docs and signature help
+				lsp_doc_border = true, -- add a border to hover docs and signature help
 			},
 			views = {
 				cmdline_popup = {
@@ -54,5 +69,6 @@ return {
 				},
 			},
 		})
+		vim.cmd("hi NoiceMini guibg=#363a4f")
 	end,
 }

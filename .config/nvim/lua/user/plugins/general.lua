@@ -5,6 +5,5 @@ return {
 	"Pocco81/true-zen.nvim",
 	"ThePrimeagen/harpoon",
 	"f-person/git-blame.nvim",
-	"RRethy/vim-illuminate",
 	lazy = false,
 }
