@@ -14,6 +14,7 @@ return {
 				illuminate = true,
 				hop = true,
 				harpoon = true,
+				treesitter_context = true,
 				indent_blankline = {
 					enabled = true,
 					colored_indent_levels = false,
