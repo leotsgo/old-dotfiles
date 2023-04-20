@@ -6,6 +6,5 @@ return {
 	"ThePrimeagen/harpoon",
 	"f-person/git-blame.nvim",
 	"RRethy/vim-illuminate",
-	"xiyaowong/transparent.nvim",
 	lazy = false,
 }
