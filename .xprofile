@@ -4,11 +4,11 @@ if [ -f /etc/os-release ]; then
 	case $NAME in
 	"Ubuntu")
 		xrandr --output eDP-1 --off
-		xrandr --output HDMI-1 --mode 1920x1080
+		xrandr --output HDMI-1 --mode 2560x1440
 		;;
 
 	"Arch Linux")
-		xrandr --output HDMI-0 --mode 1920x1080
+		xrandr --output HDMI-0 --mode 2560x1440
 		twmnd &
 		exec /usr/bin/easyeffects --gapplication-service &
 		;;
