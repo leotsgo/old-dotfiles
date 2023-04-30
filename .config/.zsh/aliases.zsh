@@ -51,6 +51,7 @@ alias aliases='vim ~/.config/.zsh/aliases.zsh'
 # useful aliases
 alias vim="nvim"
 alias nv="nvim"
+alias v="nvim"
 alias update-nvim-stable='asdf uninstall neovim stable && asdf install neovim stable'
 alias update-nvim-nightly='asdf uninstall neovim nightly && asdf install neovim nightly'
 alias update-nvim-master='asdf uninstall neovim ref:master && asdf install neovim ref:master'
