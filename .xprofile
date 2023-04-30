@@ -8,6 +8,7 @@ if [ -f /etc/os-release ]; then
 		;;
 
 	"Arch Linux")
+    export LC_CTYPE=pt_BR.UTF-8
 		xrandr --output HDMI-0 --mode 2560x1440
 		twmnd &
 		exec /usr/bin/easyeffects --gapplication-service &
