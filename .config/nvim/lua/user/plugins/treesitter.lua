@@ -2,6 +2,7 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	dependencies = {
 		{ "p00f/nvim-ts-rainbow" },
+		{ "nvim-treesitter/nvim-treesitter-context" },
 	},
 	version = false, -- last release is way too old and doesn't work on Windows
 	build = ":TSUpdate",
