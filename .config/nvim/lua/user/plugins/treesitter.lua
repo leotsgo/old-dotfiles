@@ -6,7 +6,7 @@ return {
 	},
 	version = false, -- last release is way too old and doesn't work on Windows
 	build = ":TSUpdate",
-	event = { "BufReadPost", "BufNewFile" },
+	event = { "BufReadPost", "BufNewFile", "BufEnter" },
 	config = function()
 		local status_ok, configs = pcall(require, "nvim-treesitter.configs")
 		if not status_ok then
