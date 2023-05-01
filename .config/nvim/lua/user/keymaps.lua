@@ -43,6 +43,11 @@ keymap("n", "<C-s>", ":update<CR>", opts)
 keymap("v", "<C-s>", "<C-C>:update<CR>", opts)
 keymap("i", "<C-s>", "<C-O>:update<CR>", opts)
 
+-- Navigate through wrapped lines
+keymap("n", "<leader>w", ":set wrap!<CR>", opts)
+keymap("n", "j", "v:count ? 'j' : 'gj'", { expr = true })
+keymap("n", "k", "v:count ? 'k' : 'gk'", { expr = true })
+
 -- Copies buffer full path to clipboard
 keymap("n", "<C-p>", ":let @+ = expand('%:p')<CR>", opts)
 keymap("n", "<C-f>", ":LspZeroFormat<CR>", opts)
