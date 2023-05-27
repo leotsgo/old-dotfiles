@@ -3,8 +3,18 @@ if [ -f /etc/os-release ]; then
 	. /etc/os-release
 	case $NAME in
 	"Ubuntu")
-		xrandr --output eDP-1 --off
-		xrandr --output HDMI-1 --mode 2560x1440
+		devices=$(xrandr | grep ' connected ' | awk '{ print$1 }')
+		for device in $devices; do
+			if [[ $device == "HDMI-1" ]]; then
+				xrandr --output eDP-1 --off
+				xrandr --output HDMI-1 --mode 2560x1440
+				break
+			fi
+		done
+
+		if [[ $? -ne 0 ]]; then
+			xrandr --output eDP-1 --mode 1366x768
+		fi
 		;;
 
 	"Arch Linux")
