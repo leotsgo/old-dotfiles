@@ -4,15 +4,17 @@ if [ -f /etc/os-release ]; then
 	case $NAME in
 	"Ubuntu")
 		devices=$(xrandr | grep ' connected ' | awk '{ print$1 }')
+		connected=0
 		for device in $devices; do
 			if [[ $device == "HDMI-1" ]]; then
 				xrandr --output eDP-1 --off
 				xrandr --output HDMI-1 --mode 2560x1440
+				connected=1
 				break
 			fi
 		done
 
-		if [[ $? -ne 0 ]]; then
+		if [[ connected -eq 0 ]]; then
 			xrandr --output eDP-1 --mode 1366x768
 		fi
 		;;
