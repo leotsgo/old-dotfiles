@@ -47,6 +47,7 @@ ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_UNDERLINE
 
 # Source asdf
 . $HOME/.asdf/asdf.sh
+export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 # PATH=$PATH:$(asdf where nodejs)/bin # adds node to PATH
 PATH="$HOME/.local/bin:$PATH"
 PATH="$PATH:$HOME/go/bin"
