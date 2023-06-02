@@ -23,10 +23,10 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Resize with arrows
-keymap("n", "<C-Up>", ":resize -2<CR>", opts)
-keymap("n", "<C-Down>", ":resize +2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+-- keymap("n", "<C-Up>", ":resize -2<CR>", opts)
+-- keymap("n", "<C-Down>", ":resize +2<CR>", opts)
+-- keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
+-- keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
@@ -45,8 +45,8 @@ keymap("i", "<C-s>", "<C-O>:update<CR>", opts)
 
 -- Navigate through wrapped lines
 keymap("n", "<leader>w", ":set wrap!<CR>", opts)
-keymap("n", "j", "v:count ? 'j' : 'gj'", { expr = true })
-keymap("n", "k", "v:count ? 'k' : 'gk'", { expr = true })
+keymap("n", "<Down>", "v:count ? 'j' : 'gj'", { expr = true })
+keymap("n", "<Up>", "v:count ? 'k' : 'gk'", { expr = true })
 
 -- Copies buffer full path to clipboard
 keymap("n", "<C-p>", ":let @+ = expand('%:p')<CR>", opts)
