@@ -17,10 +17,10 @@ vim.g.mapleader = " "
 
 -- Normal --
 -- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+keymap("n", "<C-Left>", "<C-w>h", opts)
+keymap("n", "<C-Down>", "<C-w>j", opts)
+keymap("n", "<C-Up>", "<C-w>k", opts)
+keymap("n", "<C-Right>", "<C-w>l", opts)
 
 -- Resize with arrows
 -- keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -29,8 +29,8 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 -- keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<S-Right>", ":bnext<CR>", opts)
+keymap("n", "<S-Left>", ":bprevious<CR>", opts)
 
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
@@ -56,8 +56,8 @@ keymap("n", "<C-f>", ":LspZeroFormat<CR>", opts)
 keymap("n", "<C-q>", ":q<CR>", opts)
 
 -- Insert --
--- Press jj fast to leave insert mode
-keymap("i", "jj", "<ESC>", opts)
+-- Press nn fast to leave insert mode
+keymap("i", "nn", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode
