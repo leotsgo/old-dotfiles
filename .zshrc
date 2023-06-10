@@ -39,7 +39,7 @@ bindkey "^[[B" history-substring-search-down
 source ~/.config/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Source zsh-vi-mode
-ZVM_VI_ESCAPE_BINDKEY=jj
+ZVM_VI_ESCAPE_BINDKEY=nn
 source $HOME/.config/.zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
