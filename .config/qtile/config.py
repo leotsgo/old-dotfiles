@@ -78,18 +78,18 @@ for i in groups:
 #######################################
 
 default_layout_options = dict(
-    border_focus="#458588",
+    border_focus=green,
     border_normal="#665c54",
     border_width=3,
-    margin=2,
+    margin=4,
     margin_on_single=0,
 )
 
 monadtall_options = dict(
-    border_focus="#458588",
+    border_focus=green,
     border_normal="#665c54",
     border_width=3,
-    margin=3,
+    margin=4,
     single_border_width=0,
     single_margin=0,
     ratio=0.5,
