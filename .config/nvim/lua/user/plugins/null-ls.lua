@@ -25,6 +25,7 @@ return {
 				formatting.stylua,
 				formatting.eslint_d,
 				formatting.shfmt,
+				formatting.prettier,
 
 				diagnostics.flake8,
 				-- diagnostics.golangci_lint,
