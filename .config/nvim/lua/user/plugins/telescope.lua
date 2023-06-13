@@ -14,6 +14,11 @@ return {
 				selection_caret = " ",
 				path_display = { "smart" },
 				file_ignore_patterns = { ".git/", "node_modules" },
+				extensions = {
+					persisted = {
+						layout_config = { width = 0.55, height = 0.55 },
+					},
+				},
 
 				mappings = {
 					i = {
@@ -25,5 +30,7 @@ return {
 				},
 			},
 		})
+
+		telescope.load_extension("persisted")
 	end,
 }
