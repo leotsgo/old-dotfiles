@@ -58,6 +58,7 @@ keymap("n", "<C-q>", ":q<CR>", opts)
 -- Insert --
 -- Press nn fast to leave insert mode
 keymap("i", "nn", "<ESC>", opts)
+keymap("v", "nn", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode

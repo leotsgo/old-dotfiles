@@ -23,12 +23,10 @@ return {
 					extra_args = { "--base-formatter", "gofumpt" },
 				}),
 				formatting.stylua,
-				formatting.eslint_d,
 				formatting.shfmt,
 				formatting.prettier,
 
 				diagnostics.flake8,
-				-- diagnostics.golangci_lint,
 				diagnostics.eslint_d,
 				diagnostics.shellcheck,
 			},
