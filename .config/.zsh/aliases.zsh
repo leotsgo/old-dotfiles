@@ -60,6 +60,7 @@ alias p10k-update='git -C ~/.config/.zsh/powerlevel10k pull'
 alias resource='echo Reshiming and resourcing... && asdf reshim && source ~/.zshrc && echo Done!'
 alias grep='grep --color=auto'
 alias lg='lazygit'
+alias z='zellij'
 
 # yadm
 function yl() {
