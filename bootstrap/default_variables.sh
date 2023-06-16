@@ -1,5 +1,5 @@
 #!/bin/bash
-HOME_OS="Arch Linux"
-WORK_OS="Ubuntu"
-WORK_EMAIL="leonardo.diniz@dito.com.br"
-PERSONAL_EMAIL="leonardodiber@gmail.com"
+export HOME_OS="Arch Linux"
+export WORK_OS="Ubuntu"
+export WORK_EMAIL="leonardo.diniz@dito.com.br"
+export PERSONAL_EMAIL="leonardodiber@gmail.com"
