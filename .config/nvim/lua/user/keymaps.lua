@@ -66,17 +66,13 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Move text up and down
-keymap("v", "<A-j>", ":m .+1<CR>==", opts)
-keymap("v", "<A-k>", ":m .-2<CR>==", opts)
-keymap("v", "p", '"_dP', opts) -- Persists yanked text
-
--- Better paste
-keymap("v", "p", '"_dP', opts)
+keymap("v", "<S-Down>", ":m .+1<CR>==", opts)
+keymap("v", "<S-Up>", ":m .-2<CR>==", opts)
 
 -- Visual Block --
 -- Move text up and down
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+keymap("x", "<S-Down>", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "<S-Up>", ":move '<-2<CR>gv-gv", opts)
 
 -- Plugins --
 
@@ -150,3 +146,13 @@ keymap("n", "<leader>do", ":lua require'dapui'.toggle()<CR>", opts)
 
 -- HOP
 keymap("n", "<leader>h", ":HopWord<CR>", opts)
+
+-- Paste and Yank
+-- keymap("v", "p", '"_dP', opts)
+keymap("x", "<leader>p", '"_dP', opts)
+keymap("n", "<leader>y", '"+y')
+keymap("v", "<leader>y", '"+y')
+keymap("n", "<leader>Y", '"+Y')
+
+keymap("n", "<leader>d", '"_d')
+keymap("v", "<leader>d", '"_d')
