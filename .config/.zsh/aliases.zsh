@@ -61,6 +61,7 @@ alias resource='echo Reshiming and resourcing... && asdf reshim && source ~/.zsh
 alias grep='grep --color=auto'
 alias lg='lazygit'
 alias z='zellij'
+alias zc='zellij -l compact'
 alias zjs='zj-sessionizer'
 
 # yadm

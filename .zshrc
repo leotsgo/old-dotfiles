@@ -65,6 +65,7 @@ fi
 
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
+fpath+=~/.config/.zsh/
 
 # initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
@@ -78,7 +79,6 @@ bindkey -M vicmd 'vv' edit-command-line
 
 # Source aliases
 source $HOME/.config/.zsh/aliases.zsh
-
 # source nvims
 source $HOME/.config/.zsh/nvims.zsh
 
