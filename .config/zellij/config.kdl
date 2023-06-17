@@ -180,7 +180,6 @@ plugins {
     compact-bar { path "compact-bar"; }
 }
 
-
 ui {
     pane_frames {
         rounded_corners true
