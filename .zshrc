@@ -65,7 +65,7 @@ fi
 
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
-fpath+=~/.config/.zsh/
+fpath+=$HOME/.config/.zsh/completions
 
 # initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
