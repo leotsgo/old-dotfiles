@@ -15,11 +15,6 @@ plug "zdharma-continuum/fast-syntax-highlighting"
 plug "hlissner/zsh-autopair"
 plug "romkatv/powerlevel10k"
 
-ZVM_VI_ESCAPE_BINDKEY=nn
-ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
-ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
-ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_UNDERLINE
-
 # bind UP and DOWN arrow keys to history substring search
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
@@ -35,6 +30,8 @@ gpg-connect-agent updatestartuptty /bye >/dev/null
 # ZSH HISTORY
 HISTSIZE=100000000
 SAVEHIST=100000000
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
 HISTFILE=~/.config/.zsh/.zsh_history
 
 # exports and path stuff
@@ -86,12 +83,8 @@ if [ -f ~/google-cloud-sdk/completion.zsh.inc ]; then . ~/google-cloud-sdk/compl
 # autoload edit command in vim
 autoload edit-command-line
 zle -N edit-command-line
-bindkey -M vicmd 'vv' edit-command-line
-ZVM_VI_ESCAPE_BINDKEY=tt
-plug "jeffreytse/zsh-vi-mode"
-ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
-ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
-ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_UNDERLINE
+bindkey "^e" edit-command-line
+bindkey '^H' backward-kill-word
 
 # export GTK_IM_MODULE=cedilla
 # export QT_IM_MODULE=cedilla

@@ -56,9 +56,9 @@ keymap("n", "<C-f>", ":LspZeroFormat<CR>", opts)
 keymap("n", "<C-q>", ":q<CR>", opts)
 
 -- Insert --
--- Press nn fast to leave insert mode
-keymap("i", "nn", "<ESC>", opts)
-keymap("v", "nn", "<ESC>", opts)
+-- Press tt fast to leave insert mode
+keymap("i", "tt", "<ESC>", opts)
+keymap("v", "tt", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode
