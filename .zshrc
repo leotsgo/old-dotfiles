@@ -8,16 +8,12 @@ fi
 [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
 plug "$HOME/.asdf/asdf.sh"
 plug "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
-plug "zsh-users/zsh-history-substring-search"
+plug "marlonrichert/zsh-autocomplete"
 plug "zsh-users/zsh-autosuggestions"
 plug "zap-zsh/supercharge"
 plug "zdharma-continuum/fast-syntax-highlighting"
 plug "hlissner/zsh-autopair"
 plug "romkatv/powerlevel10k"
-
-# bind UP and DOWN arrow keys to history substring search
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
 
 # Uses gpg-agent instead of ssh-agent
 unset SSH_AGENT_PID
@@ -85,7 +81,8 @@ autoload edit-command-line
 zle -N edit-command-line
 bindkey "^e" edit-command-line
 bindkey '^H' backward-kill-word
-
+bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
+bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
 # export GTK_IM_MODULE=cedilla
 # export QT_IM_MODULE=cedilla
 
