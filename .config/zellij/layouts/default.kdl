@@ -1,0 +1,14 @@
+layout {
+  tab name="main" {
+    pane split_direction="vertical" {
+      pane name="main" size="80%"
+      pane split_direction="horizontal" {
+        pane name="sec"
+      }
+    }
+
+    pane size=1 borderless=true {
+      plugin location="zellij:compact-bar"
+    }
+  }
+}
