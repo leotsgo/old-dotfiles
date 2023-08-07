@@ -33,3 +33,4 @@ setxkbmap -layout us -variant intl
 nitrogen --restore
 picom -f &
 flameshot &
+nm-applet &
