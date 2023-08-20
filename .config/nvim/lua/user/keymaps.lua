@@ -50,7 +50,7 @@ keymap("n", "<Up>", "v:count ? 'k' : 'gk'", { expr = true })
 
 -- Copies buffer full path to clipboard
 keymap("n", "<C-p>", ":let @+ = expand('%:p')<CR>", opts)
-keymap("n", "<C-f>", ":LspZeroFormat<CR>", opts)
+keymap("n", "<C-f>", ":LspZeroFormat! efm timeout=1000<CR>", opts)
 
 -- CTRL + q to quit
 keymap("n", "<C-q>", ":q<CR>", opts)
