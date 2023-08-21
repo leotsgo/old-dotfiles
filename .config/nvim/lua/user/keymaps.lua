@@ -80,18 +80,24 @@ keymap("x", "<S-Up>", ":move '<-2<CR>gv-gv", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope
-keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
-keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
-keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
-keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
-keymap("n", "<leader>fs", ":Telescope persisted<CR>", opts)
+keymap("n", "<leader>ff", ":Telescope find_files<CR>", { desc =  "[F]ind [F]iles" })
+keymap("n", "<leader>ft", ":Telescope live_grep<CR>", { desc = "[F]ind [T]ext" })
+keymap("n", "<leader>fp", ":Telescope projects<CR>", { desc = "[F]ind [P]rojects" })
+keymap("n", "<leader>fb", ":Telescope buffers<CR>", { desc = "[F]ind [B]uffers" })
+keymap("n", "<leader>fs", ":Telescope persisted<CR>", { desc = "[F]ind [S]aved" })
+keymap("n", "<leader>f?", ":Telescope oldfiles<CR>", { desc = "[?] Find recently opened files" })
+keymap("n", "<leader>fg", ":Telescope git_files<CR>", { desc = "Search [G]it [F]iles" })
+keymap("n", "<leader>fh", ":Telescope help_tags<CR>", { desc = "[S]earch [H]elp" })
+keymap("n", "<leader>fw", ":Telescope grep_string<CR>", { desc = "[S]earch current [W]ord" })
+keymap("n", "<leader>fd", ":Telescope diagnostics<CR>", { desc = "[S]earch [D]iagnostics" })
+keymap("n", "<leader>fr", ":Telescope lsp_references<CR>", { desc = "[G]oto [R]eferences" })
 
 -- Git
-keymap("n", "<leader>g", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
+keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
 -- Comment
-keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>")
-keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>')
+-- keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>")
+-- keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>')
 
 -- GitBlame
 keymap("n", "<leader>gb", ":GitBlameToggle<CR>", opts)
