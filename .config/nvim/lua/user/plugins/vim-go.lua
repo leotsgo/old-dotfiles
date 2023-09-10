@@ -1,4 +1,4 @@
 return {
-	-- "fatih/vim-go",
-	-- version = "*",
+	"fatih/vim-go",
+	version = "*",
 }

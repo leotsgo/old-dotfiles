@@ -22,7 +22,6 @@ return {
     local eslint_d = require("efmls-configs.linters.eslint_d")
     local prettier_d = require("efmls-configs.formatters.prettier_d")
     local golines = require('efmls-configs.formatters.golines')
-    local golangci_lint = require('efmls-configs.linters.golangci_lint')
     golines = vim.tbl_extend('force', golines, {
       formatCommand = 'golines --base-formatter gofumpt'
     })
@@ -39,7 +38,6 @@ return {
       },
 
       go = {
-        linter = golangci_lint,
         formatter = golines
       }
     })
