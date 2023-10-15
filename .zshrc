@@ -15,14 +15,6 @@ plug "zdharma-continuum/fast-syntax-highlighting"
 plug "hlissner/zsh-autopair"
 plug "romkatv/powerlevel10k"
 
-# Uses gpg-agent instead of ssh-agent
-unset SSH_AGENT_PID
-if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
-fi
-export GPG_TTY=$(tty)
-gpg-connect-agent updatestartuptty /bye >/dev/null
-
 # ZSH HISTORY
 HISTSIZE=100000000
 SAVEHIST=100000000
