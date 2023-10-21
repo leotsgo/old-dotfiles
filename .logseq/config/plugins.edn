@@ -3,16 +3,6 @@
   :repo "ahonn/logseq-plugin-todo",
   :effect true,
   :theme false},
- :logseq-journals-calendar
- {:version "v0.10.10",
-  :repo "xyhp915/logseq-journals-calendar",
-  :effect false,
-  :theme false},
- :logseq-bullet-threading
- {:version "v1.1.4",
-  :repo "pengx17/logseq-plugin-bullet-threading",
-  :effect false,
-  :theme false},
  :logseq-pdf-export-plugin
  {:version "2.2.8",
   :repo "sawhney17/logseq-pdf-export",
@@ -23,16 +13,8 @@
   :repo "pengx17/logseq-plugin-tabs",
   :effect true,
   :theme false},
- :logseq-agenda
- {:version "v2.17.1",
-  :repo "haydenull/logseq-plugin-agenda",
-  :effect true,
-  :theme false},
  :logseq-automatic-linker
- {:version "1.5.1",
-  :repo "sawhney17/logseq-automatic-linker",
-  :effect false,
-  :theme false},
+ {:version "1.5.5", :repo "sawhney17/logseq-automatic-linker", :effect false, :theme false},
  :logseq-git
  {:version "v1.5.4",
   :repo "haydenull/logseq-plugin-git",
@@ -42,4 +24,6 @@
  {:version "v0.4.0",
   :repo "vipzhicheng/logseq-plugin-mark-map",
   :effect false, 
-  :theme false}}
+  :theme false}
+ :logseq-bullet-threading {:version "v1.1.4", :repo "pengx17/logseq-plugin-bullet-threading", :effect false, :theme false}
+ :logseq-journals-calendar {:version "v0.10.10", :repo "xyhp915/logseq-journals-calendar", :effect false, :theme false}}
