@@ -24,6 +24,7 @@ if [ -f /etc/os-release ]; then
 		xrandr --output HDMI-0 --mode 2560x1440
 		twmnd &
 		exec /usr/bin/easyeffects --gapplication-service &
+    udiskie &
 		;;
 	esac
 fi
