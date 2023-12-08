@@ -1,5 +1,8 @@
 return {
 	"goolord/alpha-nvim",
+  enabled = true,
+  event = "VimEnter",
+  lazy = true,
 	config = function()
 		local status_ok, alpha = pcall(require, "alpha")
 		if not status_ok then
@@ -56,4 +59,3 @@ return {
 	end,
 }
 
---alpha.setup(dashboard.opts)

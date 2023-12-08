@@ -80,7 +80,7 @@ keymap("x", "<S-Up>", ":move '<-2<CR>gv-gv", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope
-keymap("n", "<leader>ff", ":Telescope find_files<CR>", { desc =  "[F]ind [F]iles" })
+keymap("n", "<leader>ff", ":Telescope find_files<CR>", { desc = "[F]ind [F]iles" })
 keymap("n", "<leader>ft", ":Telescope live_grep<CR>", { desc = "[F]ind [T]ext" })
 keymap("n", "<leader>fp", ":Telescope projects<CR>", { desc = "[F]ind [P]rojects" })
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", { desc = "[F]ind [B]uffers" })
@@ -162,3 +162,7 @@ keymap("n", "<leader>Y", '"+Y')
 
 keymap("n", "<leader>d", '"_d')
 keymap("v", "<leader>d", '"_d')
+
+-- Oil
+keymap("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" }, opts)
+

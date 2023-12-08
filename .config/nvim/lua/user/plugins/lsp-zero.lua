@@ -17,7 +17,7 @@ return {
 		{ "hrsh7th/cmp-nvim-lua" }, -- Optional
 
 		-- Snippets
-		{ "L3MON4D3/LuaSnip" }, -- Required
+		{ "L3MON4D3/LuaSnip", version = "v2.*" }, -- Required
 		{ "rafamadriz/friendly-snippets" }, -- Optional
 	},
 	config = function()
