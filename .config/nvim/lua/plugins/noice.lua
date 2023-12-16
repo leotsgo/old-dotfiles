@@ -1,6 +1,7 @@
 return {
 	"folke/noice.nvim",
-	-- event = "VeryLazy",
+  lazy = true,
+  event = "VeryLazy",
 	-- after = "catppuccin",
 	dependencies = {
 		{ "MunifTanjim/nui.nvim" },
@@ -71,3 +72,4 @@ return {
 		})
 	end,
 }
+

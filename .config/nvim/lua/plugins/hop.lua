@@ -6,3 +6,4 @@ return {
 		require("hop").setup()
 	end,
 }
+

@@ -1,3 +1,5 @@
+vim.g.mapleader = " "
+
 local options = {
 	backup = false, -- creates a backup file
 	-- clipboard = "unnamedplus", -- allows neovim to access the system clipboard
@@ -39,24 +41,14 @@ local options = {
 	guifont = "Comic Code Ligatures:h17", -- the font used in graphical neovim applications
 	foldmethod = "indent",
 	colorcolumn = "80",
-  list = true,
-  listchars = {space = "⋅", tab = "▸ "},
+	list = false,
+	-- listchars = { space = "⋅", tab = "▸ " },
 }
 
-vim.opt.shortmess:append("c")
-vim.opt.whichwrap:append("<,>,[,],h,l")
-vim.opt.iskeyword:append("-")
--- vim.opt.listchars("space:⋅")
+-- vim.opt.shortmess:append("c")
+-- vim.opt.whichwrap:append("<,>,[,],h,l")
+-- vim.opt.iskeyword:append("-")
 vim.cmd("set nofoldenable")
-
-vim.g.leetcode_solution_filetype = "golang"
-vim.g.leetcode_browser = "firefox"
-vim.g.nvim_markdown_preview_theme = "solarized-dark"
-vim.g["sneak#label"] = true
-vim.g.codeium_no_map_tab = true
-
-local NoiceMini = { bg = "#363a4f" }
-vim.api.nvim_set_hl(0, "NoiceMini", NoiceMini)
 
 for key, value in pairs(options) do
 	vim.opt[key] = value

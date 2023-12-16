@@ -1,5 +1,7 @@
 return {
 	"ahmedkhalf/project.nvim",
+  lazy = true,
+  event = "VeryLazy",
 	config = function()
 		local status_ok, project = pcall(require, "project_nvim")
 		if not status_ok then
@@ -20,3 +22,4 @@ return {
 		telescope.load_extension("projects")
 	end,
 }
+
