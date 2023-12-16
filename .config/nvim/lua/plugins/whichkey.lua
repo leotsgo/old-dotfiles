@@ -3,7 +3,7 @@ return {
 	event = "VeryLazy",
 	init = function()
 		vim.o.timeout = true
-		vim.o.timeoutlen = 300
+		vim.o.timeoutlen = 200
 	end,
 	config = function()
 		local wk = require("which-key")
@@ -22,6 +22,19 @@ return {
 
 		keymap("n", "<leader>d", '"_d', { desc = "Delete without yank" })
 		keymap("v", "<leader>d", '"_d', { desc = "Delete without yank" })
+
+		keymap("n", "<F5>", ":lua require'dap'.continue()<CR>")
+		keymap("n", "<F3>", ":lua require'dap'.step_into()<CR>")
+		keymap("n", "<F4>", ":lua require'dap'.step_over()<CR>")
+		keymap("n", "<F12>", ":lua require'dap'.step_out()<CR>")
+		keymap("n", "<leader>b", ":lua require'dap'.toggle_breakpoint()<CR>")
+		keymap("n", "<leader>B", ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
+		keymap("n", "<leader>lp", ":lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>")
+		keymap("n", "<leader>dr", ":lua require'dap'.repl.open()<CR>")
+		keymap("n", "<leader>dt", ":lua require'dap-go'.debug_test()<CR>")
+		keymap("n", "<leader>do", ":lua require'dapui'.toggle()<CR>")
+
+		keymap("i", "qq", "<ESC>")
 
 		wk.register({
 			["<leader>"] = {
@@ -57,7 +70,6 @@ return {
 			g = {
 				name = "Go To",
 			},
-			h = { "<cmd>HopWord<cr>", "Hop Word" },
 			["-"] = { "<cmd>Oil<CR>", "Open parent directory" },
 		})
 	end,

@@ -2,14 +2,13 @@ return {
 	"nvim-telescope/telescope.nvim",
 	lazy = true,
 	event = "VeryLazy",
-	tag = "0.1.x",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		"nvim-tree/nvim-web-devicons",
 	},
 	config = function()
-    local telescope = require("telescope")
+		local telescope = require("telescope")
 		local actions = require("telescope.actions")
 		telescope.setup({
 			mappings = {
@@ -22,6 +21,6 @@ return {
 			},
 		})
 
-    telescope.load_extension("fzf")
+		telescope.load_extension("fzf")
 	end,
 }

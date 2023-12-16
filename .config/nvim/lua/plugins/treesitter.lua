@@ -3,8 +3,8 @@ return {
 	dependencies = {
 		{ "hiphish/rainbow-delimiters.nvim" },
 	},
-	-- lazy = true,
-	-- event = "VeryLazy",
+	lazy = true,
+	event = "VeryLazy",
 	build = ":TSUpdate",
 	config = function()
 		local config = require("nvim-treesitter.configs")
