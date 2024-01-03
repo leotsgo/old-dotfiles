@@ -17,8 +17,8 @@ configuration {
 
 // Main //
 window {
-    height:                      590px;
-    width:                       1140px;
+    height:                      500px;
+    width:                       600px;
     transparency:                "real";
     fullscreen:                  false;
     enabled:                     true;
@@ -26,43 +26,58 @@ window {
     spacing:                     0px;
     padding:                     0px;
     border:                      2px;
-    border-radius:               40px;
+    border-radius:               25px;
     border-color:                @main-br;
     background-color:            transparent;
 }
 mainbox {
     enabled:                     true;
     spacing:                     0px;
-    orientation:                 horizontal;
-    children:                    [  "inputbar" , "listbox" ];
+    padding:                     0px;
+    orientation:                 vertical;
+    children:                    [ "listbox" , "inputbar"];
     background-color:            transparent;
-    background-image:            url("~/.config/swww/wall.blur", height);
 }
 
 
 // Inputs //
 inputbar {
-    enabled:                     true;
-    width:                       640px;
-    children:                    [ "mode-switcher" , "entry" ];
-    background-color:            transparent;
-    background-image:            url("~/.config/swww/wall.rofi", height);
-}
-entry {
     enabled:                     false;
 }
 
 
-// Modes //
-mode-switcher{
-    orientation:                 vertical;
-    enabled:                     true;
-    spacing:                     0px;
-    width:                       68px;
-    padding:                     160px 10px 160px 10px;
-    spacing:                     25px;
-    background-color:            transparent;
+// Lists //
+listbox {
+    padding:                     5px;
+    spacing:                     5px;
+    orientation:                 horizontal;
+    children:                    [ "mode-switcher" , "listview" ];
     background-image:            url("~/.config/swww/wall.blur", height);
+}
+listview {
+    padding:                     20px;
+    spacing:                     5px;
+    enabled:                     true;
+    columns:                     1;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    cursor:                      "default";
+    background-color:            @main-bg;
+    text-color:                  @main-fg;
+    border-radius:               25px;
+}
+mode-switcher {
+    orientation:                 vertical;
+    width:                       100px;
+    enabled:                     true;
+    padding:                     60px 10px 60px 10px;
+    spacing:                     15px;
+    background-color:            transparent;
 }
 button {
     cursor:                      pointer;
@@ -76,34 +91,11 @@ button selected {
 }
 
 
-// Lists //
-listbox {
-    spacing:                     10px;
-    padding:                     30px;
-    children:                    [ "listview" ];
-    background-color:            @main-bg;
-}
-listview {
-    enabled:                     true;
-    columns:                     1;
-    cycle:                       true;
-    dynamic:                     true;
-    scrollbar:                   false;
-    layout:                      vertical;
-    reverse:                     false;
-    fixed-height:                true;
-    fixed-columns:               true;
-    cursor:                      "default";
-    background-color:            transparent;
-    text-color:                  @main-fg;
-}
-
-
 // Elements //
 element {
     enabled:                     true;
     spacing:                     30px;
-    padding:                     8px;
+    padding:                     10px;
     border-radius:               20px;
     cursor:                      pointer;
     background-color:            transparent;
@@ -119,7 +111,7 @@ element selected.normal {
     text-color:                  @select-fg;
 }
 element-icon {
-    size:                        48px;
+    size:                        50px;
     cursor:                      inherit;
     background-color:            transparent;
     text-color:                  inherit;

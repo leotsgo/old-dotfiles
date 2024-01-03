@@ -80,3 +80,6 @@ bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# opam configuration
+[[ ! -r /home/leodiber/.opam/opam-init/init.zsh ]] || source /home/leodiber/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null

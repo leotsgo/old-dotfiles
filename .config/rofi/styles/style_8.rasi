@@ -17,8 +17,8 @@ configuration {
 
 // Main //
 window {
-    height:                      590px;
-    width:                       1140px;
+    height:                      500px;
+    width:                       600px;
     transparency:                "real";
     fullscreen:                  false;
     enabled:                     true;
@@ -34,37 +34,53 @@ mainbox {
     enabled:                     true;
     spacing:                     0px;
     orientation:                 horizontal;
-    children:                    [  "inputbar" , "listbox" ];
-    background-color:            transparent;
-    background-image:            url("~/.config/swww/wall.blur", height);
-}
-
-
-// Inputs //
-inputbar {
-    enabled:                     true;
-    width:                       640px;
-    children:                    [ "mode-switcher" , "entry" ];
+    children:                    [ "listmode" , "inputbar" ];
     background-color:            transparent;
     background-image:            url("~/.config/swww/wall.rofi", height);
 }
-entry {
-    enabled:                     false;
+
+
+// Lists //
+listmode {
+    enabled:                     true;
+    children:                    [ "listbox" , "mode-switcher" ];
+    background-color:            transparent;
+    background-image:            url("~/.config/swww/wall.blur", height);
+}
+listbox {
+    spacing:                     5px;
+    padding:                     10px;
+    children:                    [ "listview" ];
+    background-color:            transparent;
+}
+listview {
+    padding:                     15px;
+    enabled:                     true;
+    columns:                     1;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    cursor:                      "default";
+    background-color:            @main-bg;
+    text-color:                  @main-fg;
+    border-radius:               30px;
 }
 
 
 // Modes //
 mode-switcher{
-    orientation:                 vertical;
+    orientation:                 horizontal;
     enabled:                     true;
-    spacing:                     0px;
-    width:                       68px;
-    padding:                     160px 10px 160px 10px;
-    spacing:                     25px;
+    spacing:                     18px;
+    padding:                     10px 180px 20px 40px;
     background-color:            transparent;
-    background-image:            url("~/.config/swww/wall.blur", height);
 }
 button {
+    padding:                     12px;
     cursor:                      pointer;
     border-radius:               50px;
     background-color:            @main-bg;
@@ -76,34 +92,23 @@ button selected {
 }
 
 
-// Lists //
-listbox {
-    spacing:                     10px;
-    padding:                     30px;
-    children:                    [ "listview" ];
-    background-color:            @main-bg;
-}
-listview {
+// Inputs //
+inputbar {
     enabled:                     true;
-    columns:                     1;
-    cycle:                       true;
-    dynamic:                     true;
-    scrollbar:                   false;
-    layout:                      vertical;
-    reverse:                     false;
-    fixed-height:                true;
-    fixed-columns:               true;
-    cursor:                      "default";
+    width:                       150px;
+    children:                    [ "entry" ];
     background-color:            transparent;
-    text-color:                  @main-fg;
+}
+entry {
+    enabled:                     false;
 }
 
 
 // Elements //
 element {
     enabled:                     true;
-    spacing:                     30px;
-    padding:                     8px;
+    spacing:                     20px;
+    padding:                     6px;
     border-radius:               20px;
     cursor:                      pointer;
     background-color:            transparent;
