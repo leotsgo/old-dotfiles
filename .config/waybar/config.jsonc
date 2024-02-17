@@ -16,7 +16,7 @@
 
 	"modules-left": ["custom/padd","custom/l_end","cpu","memory","custom/gpuinfo","custom/r_end","custom/l_end","idle_inhibitor","clock","custom/r_end","custom/padd"],
 	"modules-center": ["custom/padd","custom/l_end","hyprland/workspaces","hyprland/window","custom/r_end","custom/padd"],
-	"modules-right": ["custom/padd","custom/l_end","backlight","network","bluetooth","pulseaudio","pulseaudio#microphone","custom/updates","custom/r_end","custom/l_end","tray","battery","custom/r_end","custom/l_end","custom/wallchange","custom/mode","custom/wbar","custom/cliphist","custom/power","custom/r_end","custom/padd"],
+	"modules-right": ["custom/padd","custom/l_end","backlight","network","bluetooth","pulseaudio","custom/updates","custom/r_end","custom/l_end","tray","battery","custom/r_end","custom/l_end","custom/power","custom/r_end","custom/padd"],
 
 
 // sourced from modules based on config.ctl //
@@ -234,7 +234,7 @@
     "custom/power": {
         "format": "{}",
         "exec": "echo ; echo  logout",
-        "on-click": "~/.config/hypr/scripts/logoutlaunch.sh 2",
+        "on-click": "wlogout",
         "interval" : 86400, // once every day
         "tooltip": true
     },

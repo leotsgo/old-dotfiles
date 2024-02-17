@@ -32,12 +32,12 @@ function d () {
 compdef _dirs d
 
 # List directory contents
-alias lsa='exa -lah --icons'
-alias l='exa -lah --icons'
-alias ll='exa -lh --icons'
-alias la='exa -lah --icons'
-alias ls='exa --icons'
-alias l.='exa -d .* --icons'
+alias lsa='eza -lah --icons'
+alias l='eza -lah --icons'
+alias ll='eza -lh --icons'
+alias la='eza -lah --icons'
+alias ls='eza --icons'
+alias l.='eza -d .* --icons'
 alias cat='bat'
 
 # Quick aliases to edit config files

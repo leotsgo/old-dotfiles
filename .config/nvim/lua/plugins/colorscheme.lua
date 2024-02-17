@@ -1,14 +1,10 @@
 return {
-	"sainnhe/gruvbox-material",
-	lazy = false,
-	priority = 1000,
-	config = function()
-		vim.g.gruvbox_material_enable_bold = 1
-		vim.g.gruvbox_material_ui_contrast = "high"
-		vim.g.gruvbox_material_show_eob = 1
-		vim.g.gruvbox_material_enable_italic = 1
-		vim.g.gruvbox_material_transparent_background = 2
-		vim.cmd([[colorscheme gruvbox-material]])
-	end,
+    "catppuccin/nvim",
+    name = "catppuccin",
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+      -- load the colorscheme here
+      vim.cmd([[colorscheme catppuccin-macchiato]])
+    end,
 }
-
