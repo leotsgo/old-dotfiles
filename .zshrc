@@ -50,14 +50,15 @@ export PATH=~/.deta/bin:$PATH
 PATH="$HOME/.local/bin:$PATH"
 PATH="$PATH:$HOME/go/bin"
 PATH="$PATH:/usr/bin"
-if [ -f /etc/os-release ]; then
-  . /etc/os-release;
-  case $NAME in 
-        "Arch Linux")
-          PATH+=:~/.cargo/bin
-          ;;
-  esac
-fi
+# if [ -f /etc/os-release ]; then
+#   . /etc/os-release;
+#   case $NAME in 
+#         "Arch Linux")
+#           PATH+=:~/.cargo/bin
+#           ;;
+#   esac
+# fi
+PATH+="$(asdf where rust)/bin"
 
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)

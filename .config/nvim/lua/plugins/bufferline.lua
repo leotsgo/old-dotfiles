@@ -14,12 +14,11 @@ return {
 					style = "underline",
 				},
 				separator_style = { "|", "|" },
-				close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
-				right_mouse_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
+				close_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
+				right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
 				offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
 			},
 			-- highlights = require("catppuccin.groups.integrations.bufferline").get(),
 		})
 	end,
 }
-

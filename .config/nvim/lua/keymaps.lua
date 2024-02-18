@@ -37,7 +37,7 @@ keymap("n", "<S-Left>", ":bprevious<CR>", opts)
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
 -- Close buffers
-keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
+keymap("n", "<S-q>", "<cmd>bdelete!<CR>", opts)
 
 -- Save with CTRL + s
 keymap("n", "<C-s>", ":update<CR>", opts)
