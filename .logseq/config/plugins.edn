@@ -1,8 +1,5 @@
 {:logseq-todo-plugin
- {:version "v1.19.0",
-  :repo "ahonn/logseq-plugin-todo",
-  :effect true,
-  :theme false},
+ {:version "v1.21.0", :repo "ahonn/logseq-plugin-todo", :effect true, :theme false},
  :logseq-pdf-export-plugin
  {:version "2.2.8",
   :repo "sawhney17/logseq-pdf-export",
@@ -21,5 +18,5 @@
   :theme false}
  :logseq-bullet-threading {:version "v1.1.4", :repo "pengx17/logseq-plugin-bullet-threading", :effect false, :theme false}
  :logseq-journals-calendar {:version "v0.10.10", :repo "xyhp915/logseq-journals-calendar", :effect false, :theme false}
- :logseq-agenda {:version "v3.9.2", :repo "haydenull/logseq-plugin-agenda", :effect true, :theme false}
- :logseq-awesome-ui {:version "v2.4.0", :repo "yoyurec/logseq-awesome-ui", :effect true, :theme false}}
+ :logseq-awesome-ui {:version "v2.4.0", :repo "yoyurec/logseq-awesome-ui", :effect true, :theme false}
+ :logseq-catppuccin {:version "v0.4.1", :repo "catppuccin/logseq", :effect false, :theme true}}

@@ -3,22 +3,20 @@
   "themes": {
     "mode": "dark",
     "light": {
-      "name": "Default Light Theme",
-      "url": null,
-      "description": "Logseq default light theme.",
+      "name": "Catppuccin Latte",
+      "url": "assets:///home/leotsgo/.logseq/plugins/logseq-catppuccin/ctp-latte.css",
+      "description": "Catppuccin Latte",
       "mode": "light",
-      "selected": true,
-      "group-first": true,
-      "group-desc": "light themes"
+      "pid": "logseq-catppuccin",
+      "selected": true
     },
     "dark": {
-      "name": "Default Dark Theme",
-      "url": null,
-      "description": "Logseq default dark theme.",
+      "name": "Catppuccin Macchiato",
+      "url": "assets:///home/leotsgo/.logseq/plugins/logseq-catppuccin/ctp-macchiato.css",
+      "description": "Catppuccin Macchiato",
       "mode": "dark",
-      "selected": true,
-      "group-first": true,
-      "group-desc": "dark themes"
+      "pid": "logseq-catppuccin",
+      "selected": false
     }
   },
   "externals": []
