@@ -55,7 +55,7 @@
     },
 
     "clock": {
-        "format": "{:%I:%M %p}",
+        "format": "{:%H:%M %p}",
         "format-alt": "{:%R 󰃭 %d·%m·%y}",
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
@@ -113,7 +113,7 @@
     },
 
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "interface": "wlo1", // (Optional) To force the use of this interface
         "format-wifi": "󰤨 {essid}",
         "format-ethernet": "󱘖 Wired",
         "tooltip-format": "󱘖 {ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}",
