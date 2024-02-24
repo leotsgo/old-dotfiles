@@ -13,7 +13,7 @@ font="Fira Sans Semibold"
 
 clock
 timestr=%R
-datestr=%a, %e of %B
+datestr=%a, %e de %B
 
 # Add current screenshot as wallpaper
 # screenshots
