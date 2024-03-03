@@ -18,7 +18,7 @@ return {
 				right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
 				offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
 			},
-			-- highlights = require("catppuccin.groups.integrations.bufferline").get(),
+			highlights = require("catppuccin.groups.integrations.bufferline").get(),
 		})
 	end,
 }
