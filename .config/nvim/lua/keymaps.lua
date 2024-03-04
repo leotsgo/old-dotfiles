@@ -1,162 +1,58 @@
--- Shorten function name
-local keymap = vim.keymap.set
--- Silent keymap option
-local opts = { silent = true }
+-- [[ Basic Keymaps ]]
+--  See `:help vim.keymap.set()`
 
---Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
-vim.g.mapleader = " "
-vim.g.maplocalleader = ","
+-- Set highlight on search, but clear on pressing <Esc> in normal mode
+vim.opt.hlsearch = true
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
--- Modes
---  normal_mode = "n",
---  insert_mode = "i",
---  visual_mode = "v",
---  visual_block_mode = "x",
---  term_mode = "t",
---  command_mode = "c",
+-- Diagnostic keymaps
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
--- Normal --
--- Better window navigation
-keymap("n", "<C-Left>", "<C-w>h", opts)
-keymap("n", "<C-Down>", "<C-w>j", opts)
-keymap("n", "<C-Up>", "<C-w>k", opts)
-keymap("n", "<C-Right>", "<C-w>l", opts)
+-- I will organize it later
+vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, { desc = 'Format buffer' })
+vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
+vim.keymap.set('n', '<S-Right>', ':bnext<CR>')
+vim.keymap.set('n', '<S-Left>', ':bprevious<CR>')
 
--- Resize with arrows
--- keymap("n", "<C-Up>", ":resize -2<CR>", opts)
--- keymap("n", "<C-Down>", ":resize +2<CR>", opts)
--- keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
--- keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+-- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
+-- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
+-- is not what someone will guess without a bit more experience.
+--
+-- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
+-- or just use <C-\><C-n> to exit terminal mode
+vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
--- Navigate buffers
-keymap("n", "<S-Right>", ":bnext<CR>", opts)
-keymap("n", "<S-Left>", ":bprevious<CR>", opts)
+-- TIP: Disable arrow keys in normal mode
+-- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
+-- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
+-- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
+-- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
--- Clear highlights
-keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
+-- Keybinds to make split navigation easier.
+--  Use CTRL+<hjkl> to switch between windows
+--
+--  See `:help wincmd` for a list of all window commands
+vim.keymap.set('n', '<C-Left>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+vim.keymap.set('n', '<C-Right>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+vim.keymap.set('n', '<C-Down>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+vim.keymap.set('n', '<C-Up>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+vim.keymap.set('n', '<S-q>', '<cmd>bdelete!<CR>', { desc = 'Close current buffer' })
 
--- Close buffers
-keymap("n", "<S-q>", "<cmd>bdelete!<CR>", opts)
+-- [[ Basic Autocommands ]]
+--  See `:help lua-guide-autocommands`
 
--- Save with CTRL + s
-keymap("n", "<C-s>", ":update<CR>", opts)
-keymap("v", "<C-s>", "<C-C>:update<CR>", opts)
-keymap("i", "<C-s>", "<C-O>:update<CR>", opts)
+-- Highlight when yanking (copying) text
+--  Try it with `yap` in normal mode
+--  See `:help vim.highlight.on_yank()`
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
 
--- Navigate through wrapped lines
-keymap("n", "<leader>w", ":set wrap!<CR>", opts)
-keymap("n", "<Down>", "v:count ? 'j' : 'gj'", { expr = true })
-keymap("n", "<Up>", "v:count ? 'k' : 'gk'", { expr = true })
-
--- Copies buffer full path to clipboard
-keymap("n", "<C-p>", ":let @+ = expand('%:p')<CR>", opts)
--- keymap("n", "<C-f>", ":LspZeroFormat! efm timeout=1000<CR>", opts)
-
--- CTRL + q to quit
-keymap("n", "<C-q>", ":q<CR>", opts)
-
--- Insert --
--- Press qq fast to leave insert mode
-keymap("i", "qq", "<ESC>", opts)
-keymap("v", "qq", "<ESC>", opts)
-
--- Visual --
--- Stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
-
--- Move text up and down
-keymap("v", "<S-Down>", ":m .+1<CR>==", opts)
-keymap("v", "<S-Up>", ":m .-2<CR>==", opts)
-
--- Visual Block --
--- Move text up and down
-keymap("x", "<S-Down>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<S-Up>", ":move '<-2<CR>gv-gv", opts)
-
--- Plugins --
-
--- NvimTree
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
-
--- Telescope
-keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
-keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
-keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
-keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
-keymap("n", "<leader>fs", ":Telescope persisted<CR>", opts)
-
--- Git
-keymap("n", "<leader>g", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
-
--- Comment
--- keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>")
--- keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>')
-
--- GitBlame
-keymap("n", "<leader>gb", ":GitBlameToggle<CR>", opts)
-
--- True-Zen keymaps
-keymap("n", "<leader>zn", ":TZNarrow<CR>", opts)
-keymap("v", "<leader>zn", ":'<,'>TZNarrow<CR>", opts)
-keymap("n", "<leader>zf", ":TZFocus<CR>", opts)
-keymap("n", "<leader>zm", ":TZMinimalist<CR>", opts)
-keymap("n", "<leader>za", ":TZAtaraxis<CR>", opts)
-
--- Harpoon
-keymap("n", "<leader>a", function()
-	require("harpoon.mark").add_file()
-end, opts)
-
-keymap("n", "<C-e>", function()
-	require("harpoon.ui").toggle_quick_menu()
-end, opts)
-
-keymap("n", "<leader>tc", function()
-	require("harpoon.cmd-ui").toggle_quick_menu()
-end, opts)
-
-keymap("n", "<C-1>", function()
-	require("harpoon.ui").nav_file(1)
-end, opts)
-
-keymap("n", "<C-2>", function()
-	require("harpoon.ui").nav_file(2)
-end, opts)
-
-keymap("n", "<C-3>", function()
-	require("harpoon.ui").nav_file(3)
-end, opts)
-
-keymap("n", "<C-4>", function()
-	require("harpoon.ui").nav_file(4)
-end, opts)
-
--- DAP
-keymap("n", "<F5>", ":lua require'dap'.continue()<CR>", opts)
-keymap("n", "<F3>", ":lua require'dap'.step_into()<CR>", opts)
-keymap("n", "<F4>", ":lua require'dap'.step_over()<CR>", opts)
-keymap("n", "<F12>", ":lua require'dap'.step_out()<CR>", opts)
-keymap("n", "<leader>b", ":lua require'dap'.toggle_breakpoint()<CR>", opts)
-keymap("n", "<leader>B", ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", opts)
-keymap("n", "<leader>lp", ":lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>", opts)
-keymap("n", "<leader>dr", ":lua require'dap'.repl.open()<CR>", opts)
-keymap("n", "<leader>dt", ":lua require'dap-go'.debug_test()<CR>", opts)
-keymap("n", "<leader>do", ":lua require'dapui'.toggle()<CR>", opts)
-
--- HOP
-keymap("n", "<leader>h", ":HopWord<CR>", opts)
-
--- Paste and Yank
--- keymap("v", "p", '"_dP', opts)
-keymap("x", "<leader>p", '"_dP', opts)
-keymap("n", "<leader>y", '"+y')
-keymap("v", "<leader>y", '"+y')
-keymap("n", "<leader>Y", '"+Y')
-
-keymap("n", "<leader>d", '"_d')
-keymap("v", "<leader>d", '"_d')
-
--- Oil
-keymap("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+-- vim: ts=2 sts=2 sw=2 et

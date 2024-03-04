@@ -1,42 +1,63 @@
-vim.g.mapleader = " "
+-- [[ Setting options ]]
+-- See `:help vim.opt`
+-- NOTE: You can change these options as you wish!
+--  For more options, you can see `:help option-list`
 
-local options = {
-	cmdheight = 0, -- more space in the neovim command line for displaying messages
-	completeopt = { "menuone", "noselect" }, -- mostly just for cmp
-	conceallevel = 0, -- so that `` is visible in markdown files
-	fileencoding = "utf-8", -- the encoding written to a file
-	hlsearch = true, -- highlight all matches on previous search pattern
-	ignorecase = true, -- ignore case in search patterns
-	mouse = "a", -- allow the mouse to be used in neovim
-	smartindent = true, -- make indenting smarter again
-	splitbelow = true, -- force all horizontal splits to go below current window
-	splitright = true, -- force all vertical splits to go to the right of current window
-	termguicolors = true, -- set term gui colors (most terminals support this)
-	undofile = true, -- enable persistent undo
-	updatetime = 300, -- faster completion (4000ms default)
-	writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
-	expandtab = true, -- convert tabs to spaces
-	shiftwidth = 2, -- the number of spaces inserted for each indentation
-	tabstop = 2, -- insert 2 spaces for a tab
-	cursorline = true, -- highlight the current line
-	number = true, -- set numbered lines
-	relativenumber = true,
-	laststatus = 3,
-	showcmd = false,
-	signcolumn = "yes:1", -- always show the sign column, otherwise it would shift the text each time
-	wrap = false, -- display lines as one long line
-	scrolloff = 8, -- is one of my fav
-	sidescrolloff = 8,
-	foldmethod = "indent",
-	colorcolumn = "80",
-	list = false,
-}
+-- Make line numbers default
+vim.opt.number = true
+vim.opt.relativenumber = true
 
--- vim.opt.shortmess:append("c")
--- vim.opt.whichwrap:append("<,>,[,],h,l")
--- vim.opt.iskeyword:append("-")
-vim.cmd("set nofoldenable")
+-- Enable mouse mode, can be useful for resizing splits for example!
+vim.opt.mouse = 'a'
 
-for key, value in pairs(options) do
-	vim.opt[key] = value
-end
+-- Don't show the mode, since it's already in status line
+vim.opt.showmode = false
+
+-- Sync clipboard between OS and Neovim.
+--  Remove this option if you want your OS clipboard to remain independent.
+--  See `:help 'clipboard'`
+vim.opt.clipboard = 'unnamedplus'
+
+-- Enable break indent
+vim.opt.breakindent = true
+
+-- Save undo history
+vim.opt.undofile = true
+
+-- Case-insensitive searching UNLESS \C or capital in search
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+-- Keep signcolumn on by default
+vim.opt.signcolumn = 'yes:1'
+vim.opt.colorcolumn = '80'
+
+-- Decrease update time
+vim.opt.updatetime = 250
+vim.opt.timeoutlen = 300
+
+-- Configure how new splits should be opened
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+
+-- Sets how neovim will display certain whitespace in the editor.
+--  See `:help 'list'`
+--  and `:help 'listchars'`
+-- vim.opt.list = true
+-- vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
+
+-- Preview substitutions live, as you type!
+vim.opt.inccommand = 'split'
+
+-- Show which line your cursor is on
+vim.opt.cursorline = true
+
+-- Minimal number of screen lines to keep above and below the cursor.
+vim.opt.scrolloff = 10
+
+-- TODO: organize
+vim.opt.cmdheight = 0
+-- vim: ts=2 sts=2 sw=2 et
