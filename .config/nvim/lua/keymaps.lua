@@ -40,6 +40,8 @@ vim.keymap.set('n', '<C-Right>', '<C-w><C-l>', { desc = 'Move focus to the right
 vim.keymap.set('n', '<C-Down>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-Up>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 vim.keymap.set('n', '<S-q>', '<cmd>bdelete!<CR>', { desc = 'Close current buffer' })
+vim.keymap.set('n', '<leader>Gg', '<cmd>lua _LAZYGIT_TOGGLE()<CR>', { desc = 'Lazygit' })
+vim.keymap.set('n', '<leader>Gb', ':GitBlameToggle<CR>', { desc = 'Toggle Git Blame' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
