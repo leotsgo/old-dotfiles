@@ -20,5 +20,6 @@ return {
       },
       -- highlights = require("catppuccin.groups.integrations.bufferline").get(),
     }
+    vim.cmd [[highlight BufferLineFill guibg=none]]
   end,
 }
