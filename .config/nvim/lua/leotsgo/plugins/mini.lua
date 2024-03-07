@@ -22,6 +22,8 @@ return {
           delay = 50,
         },
       }
+
+      require('mini.comment').setup {}
     end,
   },
 }
