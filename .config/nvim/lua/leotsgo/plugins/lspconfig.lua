@@ -72,6 +72,7 @@ return {
         clangd = {},
         gopls = {},
         pyright = {},
+        jdtls = {},
 
         lua_ls = {
           settings = {
@@ -102,6 +103,11 @@ return {
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
+
+            if server_name == 'jdtls' then
+              require('java').setup()
+            end
+
             server.capabilities =
               vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
             require('lspconfig')[server_name].setup(server)
