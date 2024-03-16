@@ -29,7 +29,7 @@ return {
         formatting.stylua,
         formatting.prettierd,
         formatting.shfmt,
-        formatting.clang_format,
+        -- formatting.clang_format,
         -- formatting.terraform_fmt,
 
         diagnostics.flake8,

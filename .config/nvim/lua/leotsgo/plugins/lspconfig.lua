@@ -108,6 +108,15 @@ return {
               require('java').setup()
             end
 
+            -- if server_name == 'clangd' then
+            --   server.capabilities = vim.tbl_deep_extend(
+            --     'force',
+            --     {},
+            --     capabilities,
+            --     { offsetEncoding = { 'utf-16' } }
+            --   )
+            -- end
+
             server.capabilities =
               vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
             require('lspconfig')[server_name].setup(server)
