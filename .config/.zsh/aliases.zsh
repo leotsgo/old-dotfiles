@@ -68,6 +68,7 @@ function zrf () { zellij run --name "$*" --floating -- zsh -ic "$*";}
 function ze () { zellij edit "$*";}
 function zef () { zellij edit --floating "$*";}
 alias pvpn='protonvpn-cli'
+alias t='tmux'
 
 # yadm
 function yl() {

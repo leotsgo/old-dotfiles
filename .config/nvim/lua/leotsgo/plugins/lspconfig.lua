@@ -73,6 +73,7 @@ return {
         gopls = {},
         pyright = {},
         jdtls = {},
+        tsserver = {},
 
         lua_ls = {
           settings = {

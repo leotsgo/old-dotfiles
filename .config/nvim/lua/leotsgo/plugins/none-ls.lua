@@ -2,6 +2,7 @@ return {
   'nvimtools/none-ls.nvim',
   lazy = true,
   dependencies = {
+    'nvimtools/none-ls-extras.nvim',
     'jay-babu/mason-null-ls.nvim',
   },
   event = { 'BufReadPost', 'BufNewFile' },
@@ -32,10 +33,11 @@ return {
         -- formatting.clang_format,
         -- formatting.terraform_fmt,
 
-        diagnostics.flake8,
+        require 'none-ls.diagnostics.eslint_d',
+        require 'none-ls.diagnostics.flake8',
+
         -- diagnostics.golangci_lint,
-        diagnostics.eslint_d,
-        diagnostics.shellcheck,
+        -- diagnostics.eslint_d,
       },
       on_attach = function(client, bufnr)
         if client.supports_method 'textDocument/formatting' then
