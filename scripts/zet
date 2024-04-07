@@ -1,0 +1,19 @@
+#!/bin/bash
+
+dir=~/sb/inbox/
+
+cd $dir || exit
+
+get_filename() {
+	read -p "Enter a filename: " filename
+	echo "$filename"
+}
+
+new_note() {
+	touch "$filename.md"
+}
+
+get_filename
+new_note
+
+nvim '+ normal Gzzo' "$filename.md" 
