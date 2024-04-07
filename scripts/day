@@ -1,4 +1,5 @@
 #!/bin/bash
+# simplified version of https://github.com/mischavandenburg script
 
 today=$(date +"%Y%m%d")
 file=~/sb/journal/$(date +"%Y%m%d").md

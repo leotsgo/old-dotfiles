@@ -1,4 +1,5 @@
 #!/bin/bash
+# simplified version of https://github.com/mischavandenburg script
 
 dir=~/sb/inbox/
 
