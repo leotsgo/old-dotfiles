@@ -4,17 +4,19 @@
 dir=~/sb/inbox/
 
 cd $dir || exit
+filename=$1
 
-get_filename() {
-	read -p "Enter a filename: " filename
-	echo "$filename"
-}
+# get_filename() {
+# 	read -p "Enter a filename: " filename
+# 	echo "$filename"
+# }
 
 new_note() {
 	touch "$filename.md"
 }
 
-get_filename
+echo $1.md
+# get_filename
 new_note
 
-nvim '+ normal Gzzo' "$filename.md" 
+nvim '+ normal Gzzo' "$filename.md"
